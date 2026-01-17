@@ -34,37 +34,7 @@ const projects = [
     image: "/digital-wedding-invitation-elegant-dark-theme.jpg",
     tags: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "Animations"],
     link: "#",
-  },
-  {
-    title: "Simulador de Examen",
-    description:
-      "Aplicación React pensada para que mis compañeros y yo podamos practicar exámenes desde la pc o el celular. Permite resolver un simulacro de 20 preguntas al azar y ver el resultado final.",
-    image: "/exam-quiz-application-education-dark-theme.jpg",
-    tags: ["React", "Tailwind", "JavaScript", "Google Sheets"],
-  },
-  {
-    title: "SagerFix - Venta de Celulares",
-    description:
-      "Plataforma web para venta de celulares conectada a hoja de cálculo como base de datos. Integración con API del dólar blue para cotización actualizada. Filtros por marca, gama y disponibilidad.",
-    image: "/mobile-phone-store-ecommerce-dark-theme.jpg",
-    tags: ["Next.js", "API Rest", "Google Sheets", "Tailwind", "TypeScript"],
-    link: "#",
-  },
-  {
-    title: "La Beba Padel Club",
-    description:
-      "Plataforma web con sistema de reserva de turnos, información de torneos y consulta de ranking. Panel administrativo completo para gestión de jugadores, noticias, turnos, carrusel y torneos.",
-    image: "/padel-tennis-club-booking-sports-dark-theme.jpg",
-    tags: ["React", "MongoDB", "Node.js", "Express", "Tailwind", "JavaScript"],
-    link: "#",
-  },
-  {
-    title: "Chat Online",
-    description:
-      "Aplicación de chat en tiempo real utilizando Socket.io. Permite a los usuarios unirse a una sala de chat y enviar mensajes instantáneos.",
-    image: "/real-time-chat-application-messaging-dark-theme.jpg",
-    tags: ["Node.js", "Express", "Socket.io", "React"],
-  },
+  }
 ]
 
 export function ProjectsSection() {

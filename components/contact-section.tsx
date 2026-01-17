@@ -8,19 +8,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "walter.sager@gmail.com",
-    href: "mailto:walter.sager@gmail.com",
+    value: "walter.josue@gmail.com",
+    href: "mailto:walter.josue@gmail.com",
   },
   {
     icon: Phone,
     label: "Teléfono",
-    value: "+54 9 3482 414077",
-    href: "tel:+5493482414077",
+    value: "+57 312 222 22 22",
+    href: "tel:+573122222222",
   },
   {
     icon: MapPin,
     label: "Ubicación",
-    value: "Santa Fe, Argentina",
+    value: "Bogota, Colombia",
   },
 ]
 
