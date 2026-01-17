@@ -39,8 +39,8 @@ export function TechStack() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Stack Tecnológico</h2>
-          <p className="text-muted-foreground">Tecnologías con las que trabajo</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Expertos en Tecnología de Vanguardia</h2>
+          <p className="text-muted-foreground text-lg">Dominamos las herramientas más potentes del mercado para garantizar soluciones escalables y seguras.</p>
         </motion.div>
       </div>
 

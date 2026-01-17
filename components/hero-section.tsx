@@ -22,18 +22,18 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-balance"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-balance leading-tight"
             >
-              Hola, soy <span className="text-primary">Walter Sager</span>
+              Escala tu Negocio con <br /><span className="text-primary italic">Soluciones Digitales</span> de Alto Impacto
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-6"
+              className="text-xl md:text-2xl text-muted-foreground mb-6 font-medium"
             >
-              Desarrollador Full Stack
+              Nexus Digital Studio
             </motion.p>
 
             <motion.p
@@ -42,8 +42,8 @@ export function HeroSection() {
               transition={{ delay: 0.3 }}
               className="text-base md:text-lg text-muted-foreground mb-8 text-pretty leading-relaxed"
             >
-              Me especializo en crear aplicaciones web escalables y robustas, transformar ideas en soluciones
-              funcionales que optimizan procesos y mejoran la experiencia del usuario.
+              Transformamos ideas complejas en sistemas eficientes, escalables y orientados a resultados.
+              Ayudamos a empresas y startups a dominar el entorno digital con tecnología de vanguardia.
             </motion.p>
 
             <motion.div
@@ -53,9 +53,9 @@ export function HeroSection() {
               className="flex flex-wrap gap-4"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" asChild className="group">
-                  <a href="#projects">
-                    Ver Proyectos
+                <Button size="lg" asChild className="group px-8">
+                  <a href="#contact">
+                    Cotizar Proyecto
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </Button>
@@ -65,11 +65,10 @@ export function HeroSection() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="group border-primary/50 hover:bg-primary/10 hover:border-primary bg-transparent"
+                  className="group px-8 border-primary/50 hover:bg-primary/10 hover:border-primary bg-transparent text-foreground"
                 >
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="mr-2 h-4 w-4" />
-                    Ir a LinkedIn
+                  <a href="#services">
+                    Nuestros Servicios
                   </a>
                 </Button>
               </motion.div>
@@ -83,22 +82,38 @@ export function HeroSection() {
             className="relative"
           >
             <motion.div
-              className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
+              className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px]"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl transition-all duration-500 hover:bg-primary/40" />
-              {/* Border ring with glow */}
-              <div className="absolute inset-0 rounded-full border-2 border-primary/40 transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]" />
-              <div className="relative w-full h-full rounded-full overflow-hidden">
+              <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl transition-all duration-500 hover:bg-primary/30" />
+              {/* UI Overlay decorations */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-card/80 backdrop-blur-sm border border-primary/20 rounded-xl z-20 hidden md:flex items-center justify-center p-4 shadow-xl">
+                <div className="space-y-2 w-full">
+                  <div className="h-2 w-full bg-primary/20 rounded" />
+                  <div className="h-2 w-2/3 bg-primary/40 rounded" />
+                </div>
+              </div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-16 bg-card/80 backdrop-blur-sm border border-primary/20 rounded-xl z-20 hidden md:flex items-center justify-center p-4 shadow-xl">
+                <div className="flex gap-2">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/30" />
+                  <div className="flex-1 space-y-1">
+                    <div className="h-2 w-12 bg-primary/20 rounded" />
+                    <div className="h-1.5 w-8 bg-muted rounded" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-card">
                 <Image
                   src="/professional-male-developer-portrait-dark-backgrou.jpg"
-                  alt="Walter Sager - Desarrollador Full Stack"
+                  alt="Nexus Digital Studio - Soluciones Digitales"
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-80"
                   priority
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               </div>
             </motion.div>
           </motion.div>

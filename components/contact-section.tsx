@@ -38,10 +38,10 @@ export function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contacto</h2>
-          <p className="text-muted-foreground">Disponible para nuevas oportunidades laborales</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Impulsa tu Próximo Salto Digital</h2>
+          <p className="text-muted-foreground text-lg">Estamos listos para transformar tu visión en una realidad escalable.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
@@ -51,7 +51,7 @@ export function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-xl font-semibold mb-6">Información de Contacto</h3>
+            <h3 className="text-xl font-semibold mb-6 text-primary">Canales Directos</h3>
             <div className="space-y-4">
               {contactInfo.map((item, index) => (
                 <motion.div
@@ -69,19 +69,19 @@ export function ContactSection() {
                   <div>
                     <p className="text-sm text-muted-foreground">{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="text-foreground hover:text-primary transition-colors duration-200">
+                      <a href={item.href} className="text-foreground font-medium hover:text-primary transition-colors duration-200">
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-foreground">{item.value}</p>
+                      <p className="text-foreground font-medium">{item.value}</p>
                     )}
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className="mt-8">
-              <h4 className="text-lg font-semibold mb-4">Redes Sociales</h4>
+            <div className="mt-12">
+              <h4 className="text-lg font-semibold mb-4">Nuestra Presencia</h4>
               <div className="flex gap-3">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -89,9 +89,9 @@ export function ContactSection() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.15, borderColor: "var(--primary)" }}
+                    whileHover={{ scale: 1.1, borderColor: "var(--primary)" }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-11 h-11 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary/10 transition-all duration-200"
+                    className="w-12 h-12 bg-card border border-border rounded-xl flex items-center justify-center hover:bg-primary/10 transition-all duration-200"
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />
@@ -110,22 +110,27 @@ export function ContactSection() {
               borderColor: "var(--primary)",
               boxShadow: "0 20px 40px -15px rgba(34, 197, 94, 0.15)",
             }}
-            className="bg-card border border-border rounded-xl p-6 transition-all duration-300 h-fit"
+            className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-8 transition-all duration-300 h-fit"
           >
-            <h3 className="text-xl font-semibold mb-3">¿Tienes un proyecto en mente?</h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Estoy disponible para proyectos freelance y oportunidades de colaboración. Hablemos sobre cómo puedo
-              ayudarte.
+            <h3 className="text-2xl font-bold mb-4">Hablemos de tu Proyecto</h3>
+            <p className="text-muted-foreground mb-8 text-pretty leading-relaxed">
+              ¿Buscas escalar tu operación, automatizar procesos o crear un producto desde cero?
+              Nuestro equipo senior está listo para asesorarte sin compromiso.
             </p>
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button asChild className="w-full group">
-                <a href="mailto:walter.sager@gmail.com" className="flex items-center justify-center gap-2">
-                  <Mail className="w-4 h-4" />
-                  Enviar Email
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </Button>
-            </motion.div>
+            <div className="space-y-4">
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button asChild className="w-full group h-12 text-lg">
+                  <a href="mailto:nexus.digital@studio.com" className="flex items-center justify-center gap-2">
+                    <Mail className="w-4 h-4" />
+                    Cotizar Ahora
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </Button>
+              </motion.div>
+              <p className="text-center text-sm text-muted-foreground">
+                Respuesta garantizada en menos de 24 horas hábiles.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

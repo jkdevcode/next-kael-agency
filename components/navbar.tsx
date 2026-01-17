@@ -7,9 +7,9 @@ import { Menu, X } from "lucide-react"
 
 const navLinks = [
   { href: "#home", label: "Inicio" },
-  { href: "#tech", label: "Stack" },
+  { href: "#tech", label: "Tecnología" },
   { href: "#services", label: "Servicios" },
-  { href: "#projects", label: "Proyectos" },
+  { href: "#projects", label: "Casos de Éxito" },
   { href: "#contact", label: "Contacto" },
 ]
 
@@ -27,7 +27,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           <motion.div whileHover={{ scale: 1.05 }}>
             <Link href="#home" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors">
-              Walter Sager
+              Nexus Digital Studio
             </Link>
           </motion.div>
 
