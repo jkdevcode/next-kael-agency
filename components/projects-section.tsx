@@ -5,34 +5,34 @@ import { ProjectCard } from "./project-card"
 
 const projects = [
   {
-    title: "Rifas Online",
+    title: "Nexus Raffle Engine",
     description:
-      "Plataforma web para rifas online. Los usuarios pueden comprar números, ver sorteos en vivo y una vez completada la rifa, se anuncia el ganador con su nombre completo y número ganador.",
+      "Plataforma de alta escalabilidad para la gestión y venta de números de rifas en tiempo real. Implementamos una arquitectura capaz de procesar cientos de transacciones simultáneas con sincronización automática.",
     image: "/online-raffle-lottery-platform-dark-theme-neon.jpg",
-    tags: ["Next.js", "Google Sheets", "TypeScript", "Tailwind"],
+    tags: ["Next.js", "Real-time", "Fintech", "Cloud"],
     link: "#",
   },
   {
-    title: "Sistemas para Barberías",
+    title: "Booking Hub Pro",
     description:
-      "Aplicación web desarrollada como proyecto final de Programación IV (UTN). Permite reservar turnos, gestionar servicios y administrar confirmaciones desde un panel de control.",
+      "Sistema de gestión de reservas optimizado que redujo el tiempo administrativo en un 60%. Incluye panel de control avanzado, gestión de turnos inteligente y notificaciones automáticas vía WhatsApp.",
     image: "/barbershop-booking-system-dashboard-dark-theme.jpg",
-    tags: ["React", "NestJS", "MySQL", "TypeORM", "Tailwind", "TypeScript", "Swagger"],
+    tags: ["SaaS", "Optimization", "Automation", "Dashboard"],
   },
   {
-    title: "E-commerce Vibras",
+    title: "Vibras E-commerce Suite",
     description:
-      "E-commerce completo con gestión de productos, stock y carrito. Implementación de subida de imágenes con AWS S3 y panel de administración.",
+      "E-commerce de alto rendimiento enfocado en la experiencia de compra fluida. Integra gestión de inventario inteligente, pasarela de pagos segura y carga optimizada para SEO y conversión.",
     image: "/fashion-ecommerce-store-dark-theme-modern.jpg",
-    tags: ["Next.js", "Node.js", "AWS S3", "MongoDB", "TypeScript", "Tailwind"],
+    tags: ["Next.js", "E-commerce", "AWS", "Performance"],
     link: "#",
   },
   {
-    title: "Eventos e Invitaciones Web",
+    title: "Event Connect Digital",
     description:
-      "Aplicación web compartir invitaciones digitales interactivas con música, animaciones, contador y confirmación por WhatsApp.",
+      "Solución de invitaciones interactivas premium que redefine la confirmación de asistencia. Mejora el engagement del invitado con animaciones fluidas y una interfaz intuitiva para dispositivos móviles.",
     image: "/digital-wedding-invitation-elegant-dark-theme.jpg",
-    tags: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "Animations"],
+    tags: ["UX", "Interactive", "Animations", "Frontend"],
     link: "#",
   }
 ]
@@ -45,10 +45,12 @@ export function ProjectsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Proyectos Destacados</h2>
-          <p className="text-muted-foreground">Algunos de mis trabajos más recientes</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Casos de Éxito</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Descubre cómo hemos ayudado a diversas empresas a transformar sus procesos y alcanzar sus objetivos mediante soluciones tecnológicas de alto nivel.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

@@ -87,10 +87,10 @@ export function BehindProjectsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Detrás de cada proyecto</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Nuestra Metodología</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
-            Cada proyecto nació de un problema real. Aquí muestro cómo lo abordé, las soluciones que implementé y los
-            aprendizajes que transformaron mi forma de desarrollar software.
+            Cada solución exitosa nace de entender profundamente el desafío. Así es como en Nexus Digital Studio abordamos cada proyecto,
+            superando obstáculos y entregando valor tangible a través de la tecnología.
           </p>
         </motion.div>
 

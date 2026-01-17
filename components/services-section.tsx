@@ -6,27 +6,27 @@ import { Code2, Server, Sparkles, Wrench } from "lucide-react"
 const services = [
   {
     icon: Code2,
-    title: "Desarrollo Web Full Stack",
+    title: "Desarrollo Web de Alto Rendimiento",
     description:
-      "Creo aplicaciones web completas desde cero, con interfaces intuitivas y backends robustos que escalan con tu negocio.",
+      "Construimos plataformas rápidas, seguras y escalables diseñadas para convertir visitantes en clientes y soportar el crecimiento de tu negocio.",
   },
   {
     icon: Server,
-    title: "APIs y Arquitecturas",
+    title: "Sistemas y APIs a Medida",
     description:
-      "Diseño e implemento arquitecturas escalables y APIs REST que optimizan procesos y conectan sistemas de manera eficiente.",
+      "Optimizamos tu infraestructura digital con backends robustos e integraciones que centralizan tu operación y eliminan fricciones innecesarias.",
   },
   {
     icon: Sparkles,
-    title: "Experiencias Interactivas",
+    title: "Experiencias de Usuario (UX/UI)",
     description:
-      "Desarrollo interfaces modernas con animaciones fluidas que mejoran la experiencia del usuario y hacen destacar tu producto.",
+      "Diseñamos interfaces intuitivas que no solo sorprenden visualmente, sino que están estratégicamente pensadas para facilitar la interacción y el éxito del usuario.",
   },
   {
     icon: Wrench,
-    title: "Mantenimiento y Optimización",
+    title: "Automatización de Procesos",
     description:
-      "Mejoro y mantengo aplicaciones existentes, optimizando rendimiento, seguridad y agregando nuevas funcionalidades.",
+      "Transformamos tareas manuales en flujos automáticos inteligentes, permitiendo que tu equipo se enfoque en actividades que generen valor real.",
   },
 ]
 
@@ -53,12 +53,12 @@ export function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Soluciones que ofrezco</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Transformo ideas en productos digitales funcionales, escalables y centrados en el usuario. Mi enfoque
-            combina tecnología moderna con mejores prácticas para entregar soluciones reales.
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Soluciones que Impulsan tu Negocio</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
+            En Nexus Digital Studio combinamos estrategia de negocio con tecnología de punta para entregar productos digitales
+            que generan un impacto real en tu rentabilidad.
           </p>
         </motion.div>
 
