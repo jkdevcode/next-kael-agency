@@ -39,16 +39,16 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-32">
+      <div className="container max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Casos de Éxito</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Casos de Éxito</h2>
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             Descubre cómo hemos ayudado a diversas empresas a transformar sus procesos y alcanzar sus objetivos mediante soluciones tecnológicas de alto nivel.
           </p>
         </motion.div>

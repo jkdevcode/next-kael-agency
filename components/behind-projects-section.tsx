@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Accordion, AccordionItem } from "@heroui/accordion"
+import {Divider} from "@heroui/divider";
 import { AlertCircle, CheckCircle2, Lightbulb } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -25,7 +26,7 @@ const projectStories = [
       "Integración entre frontend y backend usando Axios y guards JWT.",
       "Diseño de interfaces Responsivas con Tailwind y enfoque UX.",
     ],
-    color: "bg-blue-500",
+    color: "primary", // HeroUI Primary (Blue)
   },
   {
     title: "Web Vibras",
@@ -43,22 +44,40 @@ const projectStories = [
       "Implementación de flujos de recuperación de carritos abandonados.",
       "Escalabilidad de bases de datos relacionales en entornos de alta demanda.",
     ],
-    color: "bg-neutral-200",
+    color: "secondary", // HeroUI Secondary (Purple/Pink depending on theme)
+  },
+  {
+    title: "Booking Hub Pro",
+    description:
+      "SaaS de gestión de reservas para centros deportivos de alto rendimiento. Optimización de horarios y gestión de membresías.",
+    problem:
+      "Los centros deportivos perdían hasta un 30% de ingresos por cancelaciones de último minuto y falta de automatización en pagos.",
+    solution: [
+      "Sistema de prepago obligatorio mediante Stripe para asegurar la reserva.",
+      "Algoritmo de optimización de canchas que reduce tiempos muertos en un 25%.",
+      "API de notificaciones push para recordatorios y promociones personalizadas.",
+    ],
+    learnings: [
+      "Manejo de estados complejos y concurrencia en reservas en tiempo real.",
+      "Implementación de dashboards analíticos para dueños de negocios.",
+      "Seguridad avanzada en transacciones financieras integradas.",
+    ],
+    color: "danger", // HeroUI Warning (Yellow/Orange)
   },
 ]
 
 export function BehindProjectsSection() {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-background">
+      <div className="container max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Nuestra Metodología</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Nuestra Metodología</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg md:text-xl leading-relaxed text-pretty font-medium">
             Cada solución exitosa nace de entender profundamente el desafío. Así es como en Nexus Digital Studio abordamos cada proyecto,
             superando obstáculos y entregando valor tangible a través de la tecnología.
           </p>
@@ -66,59 +85,80 @@ export function BehindProjectsSection() {
 
         <div className="max-w-5xl mx-auto">
           <Accordion variant="splitted" selectionMode="single">
-            {projectStories.map((story, index) => (
-              <AccordionItem
-                key={index}
-                aria-label={story.title}
-                className="group border border-white/5 bg-card/20 hover:bg-card/30 data-[open=true]:bg-card/40 rounded-2xl mb-4"
-                title={<span className="text-xl md:text-2xl font-bold">{story.title}</span>}
-                subtitle={<span className="text-muted-foreground">{story.description}</span>}
-                startContent={<div className={cn("w-1.5 h-12 rounded-full", story.color)} />}
-              >
-                <div className="pt-4 pb-4 space-y-8 px-2">
-                  {/* Problema */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-primary/80">
-                      <AlertCircle className="w-5 h-5" />
-                      <h4 className="font-bold uppercase tracking-wider text-xs">Problema</h4>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed pl-7">{story.problem}</p>
-                  </div>
+            {projectStories.map((story, index) => {
+              // Precise color mapping for accents and icon containers
+              const colorConfig: Record<string, { ring: string; bg: string; icon: string; bullet: string }> = {
+                primary: { ring: "border-primary/30", bg: "bg-primary/10", icon: "text-primary", bullet: "bg-primary" },
+                secondary: { ring: "border-secondary/30", bg: "bg-secondary/10", icon: "text-secondary", bullet: "bg-secondary" },
+                warning: { ring: "border-warning/30", bg: "bg-warning/10", icon: "text-warning", bullet: "bg-warning" },
+                danger: { ring: "border-danger/30", bg: "bg-danger/10", icon: "text-danger", bullet: "bg-danger" },
+                success: { ring: "border-success/30", bg: "bg-success/10", icon: "text-success", bullet: "bg-success" },
+                default: { ring: "border-default-300", bg: "bg-default-100", icon: "text-default-500", bullet: "bg-default-300" },
+              }
 
-                  {/* Solución */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-primary/80">
-                      <CheckCircle2 className="w-5 h-5" />
-                      <h4 className="font-bold uppercase tracking-wider text-xs">Solución</h4>
-                    </div>
-                    <ul className="pl-7 space-y-2">
-                      {story.solution.map((item, i) => (
-                        <li key={i} className="flex gap-2 text-muted-foreground text-sm md:text-base">
-                          <span className="text-primary">•</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              const theme = colorConfig[story.color as keyof typeof colorConfig] || colorConfig.default
 
-                  {/* Qué aprendí */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-primary/80">
-                      <Lightbulb className="w-5 h-5" />
-                      <h4 className="font-bold uppercase tracking-wider text-xs">Lo que logramos</h4>
+              return (
+                <AccordionItem
+                  key={index}
+                  aria-label={story.title}
+                  className="group border border-white/5 bg-default-50/5 hover:bg-default-100/10 data-[open=true]:bg-default-100/10 rounded-xl mb-2 p-4 last:mb-0 shadow-none"
+                  title={<span className="text-2xl font-bold text-foreground transition-colors block mb-2">{story.title}</span>}
+                  subtitle={<span className="leading-relaxed text-sm/6 md:text-base/6 block mt-1">{story.description}</span>}
+                  startContent={<div className={cn("md:w-1.5 w-0.5 h-12 rounded-full transition-colors", theme.bullet)} />}
+                >
+                  <div className="pt-4 pb-6 space-y-8 px-2">
+                  <Divider orientation="vertical" />
+                    {/* Problema */}
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className={cn("flex items-center justify-center w-9 h-9 rounded-lg border transition-all", theme.ring, theme.bg, theme.icon)}>
+                          <AlertCircle className="w-5 h-5" />
+                        </div>
+                        <h4 className="font-bold text-foreground text-lg md:text-xl">El Desafío</h4>
+                      </div>
+                      <p className="text-default-500 leading-relaxed pl-13 text-sm/7 md:text-base/7 font-medium">{story.problem}</p>
                     </div>
-                    <ul className="pl-7 space-y-2">
-                      {story.learnings.map((item, i) => (
-                        <li key={i} className="flex gap-2 text-muted-foreground text-sm md:text-base">
-                          <span className="text-primary">•</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+
+                    {/* Solución */}
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className={cn("flex items-center justify-center w-9 h-9 rounded-lg border transition-all", theme.ring, theme.bg, theme.icon)}>
+                          <CheckCircle2 className="w-5 h-5" />
+                        </div>
+                        <h4 className="font-bold text-foreground  text-lg md:text-xl">La Estrategia</h4>
+                      </div>
+                      <ul className="pl-12 space-y-2">
+                        {story.solution.map((item, i) => (
+                          <li key={i} className="flex gap-3 text-default-500 text-sm/7 md:text-base/7 font-medium">
+                            <span className={cn("mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0", theme.bullet)} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Qué aprendí */}
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className={cn("flex items-center justify-center w-9 h-9 rounded-lg border transition-all", theme.ring, theme.bg, theme.icon)}>
+                          <Lightbulb className="w-5 h-5" />
+                        </div>
+                        <h4 className="font-bold text-foreground  text-lg md:text-xl">Impacto Logrado</h4>
+                      </div>
+                      <ul className="pl-12 space-y-2">
+                        {story.learnings.map((item, i) => (
+                          <li key={i} className="flex gap-3 text-default-500 text-sm/7 md:text-base/7 font-medium">
+                            <span className={cn("mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0", theme.bullet)} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </AccordionItem>
-            ))}
+                </AccordionItem>
+              )
+            })}
           </Accordion>
         </div>
       </div>

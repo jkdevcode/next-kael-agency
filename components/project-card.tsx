@@ -43,17 +43,17 @@ export function ProjectCard({ title, description, image, tags, link }: ProjectCa
           <div className="absolute inset-0 bg-default-100/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
         </CardBody>
 
-        <CardBody className="p-5 flex-grow">
-          <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{title}</h3>
-          <p className="text-sm text-muted-foreground mb-4 line-clamp-3 leading-relaxed">{description}</p>
-          <div className="flex flex-wrap gap-1.5 mb-2">
+        <CardBody className="p-6 flex-grow">
+          <h3 className="text-xl font-bold mb-3 group-hover:text-default-500 transition-colors duration-300 leading-tight">{title}</h3>
+          <p className="text-sm text-default-500 mb-6 line-clamp-3 leading-relaxed font-medium">{description}</p>
+          <div className="flex flex-wrap gap-2 mb-2">
             {tags.slice(0, 5).map((tag) => (
               <Chip
                 key={tag}
                 size="sm"
                 variant="flat"
                 color="default"
-                className="text-xs font-medium"
+                className="text-[10px] font-bold uppercase tracking-wider bg-default-100"
               >
                 {tag}
               </Chip>
@@ -62,20 +62,20 @@ export function ProjectCard({ title, description, image, tags, link }: ProjectCa
         </CardBody>
 
         {link && (
-          <CardFooter className="px-5 pb-5 pt-0">
+          <CardFooter className="px-6 pb-6 pt-0">
             <Button
               as="a"
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              variant="bordered"
+              variant="flat"
               color="default"
-              size="sm"
+              size="md"
               fullWidth
               endContent={<ExternalLink className="h-4 w-4" />}
-              className="border-default/40 hover:bg-default-100"
+              className="bg-default-100 font-bold hover:bg-default-200"
             >
-              Visitar
+              Ver Proyecto
             </Button>
           </CardFooter>
         )}
