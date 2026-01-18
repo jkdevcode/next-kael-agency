@@ -1,9 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Linkedin } from "lucide-react"
-import Image from "next/image"
+import { Button } from "@heroui/button"
+import { Image } from "@heroui/image"
+import { ArrowRight } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -52,26 +52,25 @@ export function HeroSection() {
               transition={{ delay: 0.4 }}
               className="flex flex-wrap gap-4"
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" asChild className="group px-8">
-                  <a href="#contact">
-                    Cotizar Proyecto
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  asChild
-                  className="group px-8 border-primary/50 hover:bg-primary/10 hover:border-primary bg-transparent text-foreground"
-                >
-                  <a href="#services">
-                    Nuestros Servicios
-                  </a>
-                </Button>
-              </motion.div>
+              <Button
+                as="a"
+                href="#contact"
+                color="default"
+                size="lg"
+                endContent={<ArrowRight className="h-4 w-4" />}
+                className="px-8 font-bold"
+              >
+                Cotizar Proyecto
+              </Button>
+              <Button
+                as="a"
+                href="#services"
+                variant="bordered"
+                size="lg"
+                className="px-8 border-default/50 text-foreground font-semibold"
+              >
+                Nuestros Servicios
+              </Button>
             </motion.div>
           </motion.div>
 
@@ -105,16 +104,13 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-card">
-                <Image
-                  src="/professional-male-developer-portrait-dark-backgrou.jpg"
-                  alt="Nexus Digital Studio - Soluciones Digitales"
-                  fill
-                  className="object-cover opacity-80"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-              </div>
+              <Image
+                isBlurred
+                width={450}
+                src="/professional-male-developer-portrait-dark-backgrou.jpg"
+                alt="Nexus Digital Studio - Soluciones Digitales"
+                className="object-cover opacity-90 rounded-2xl border border-white/10"
+              />
             </motion.div>
           </motion.div>
         </div>
