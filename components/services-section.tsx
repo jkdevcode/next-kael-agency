@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { Card, CardHeader, CardBody } from "@heroui/card"
 import { Code2, Server, Sparkles, Wrench } from "lucide-react"
 
 const services = [
@@ -47,16 +48,16 @@ const itemVariants = {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-card/30">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-32 bg-default-50/5">
+      <div className="container max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Soluciones que Impulsan tu Negocio</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Soluciones que Impulsan tu Negocio</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg md:text-xl leading-relaxed text-pretty">
             En Nexus Digital Studio combinamos estrategia de negocio con tecnología de punta para entregar productos digitales
             que generan un impacto real en tu rentabilidad.
           </p>
@@ -73,18 +74,22 @@ export function ServicesSection() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{
-                y: -8,
-                borderColor: "var(--primary)",
-                boxShadow: "0 20px 40px -15px rgba(34, 197, 94, 0.15)",
-              }}
-              className="group p-6 bg-card border border-border rounded-xl transition-all duration-300 cursor-default"
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+              <Card
+                isHoverable
+                isPressable
+                className="bg-card h-full border border-border group transition-all duration-300"
+              >
+                <CardHeader className="flex gap-3 px-6 pt-6 pb-2">
+                  <div className="w-12 h-12 bg-default-100 rounded-lg flex items-center justify-center group-hover:bg-default-200 group-hover:scale-110 transition-all duration-300">
+                    <service.icon className="w-6 h-6 text-foreground/80" />
+                  </div>
+                </CardHeader>
+                <CardBody className="px-6 pb-6">
+                  <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                </CardBody>
+              </Card>
             </motion.div>
           ))}
         </motion.div>

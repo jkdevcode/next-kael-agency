@@ -1,37 +1,37 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Linkedin } from "lucide-react"
-import Image from "next/image"
+import { Button } from "@heroui/button"
+import { Image } from "@heroui/image"
+import { ArrowRight } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-12 relative overflow-hidden">
+    <section id="home" className="min-h-[90vh] flex items-center justify-center pt-32 pb-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="container max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex-1 max-w-2xl"
+            className="flex-1 max-w-3xl"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-balance leading-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-[1.1] tracking-tight"
             >
-              Escala tu Negocio con <br /><span className="text-primary italic">Soluciones Digitales</span> de Alto Impacto
+              Escala tu Negocio con <br /><span className="text-default-400 italic font-light">Soluciones Digitales</span> de Alto Impacto
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-6 font-medium"
+              className="text-lg md:text-xl text-default-500 mb-8 font-medium tracking-wide uppercase"
             >
               Nexus Digital Studio
             </motion.p>
@@ -40,7 +40,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-base md:text-lg text-muted-foreground mb-8 text-pretty leading-relaxed"
+              className="text-lg md:text-xl text-muted-foreground mb-10 text-pretty leading-relaxed max-w-2xl"
             >
               Transformamos ideas complejas en sistemas eficientes, escalables y orientados a resultados.
               Ayudamos a empresas y startups a dominar el entorno digital con tecnología de vanguardia.
@@ -52,26 +52,25 @@ export function HeroSection() {
               transition={{ delay: 0.4 }}
               className="flex flex-wrap gap-4"
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" asChild className="group px-8">
-                  <a href="#contact">
-                    Cotizar Proyecto
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  asChild
-                  className="group px-8 border-primary/50 hover:bg-primary/10 hover:border-primary bg-transparent text-foreground"
-                >
-                  <a href="#services">
-                    Nuestros Servicios
-                  </a>
-                </Button>
-              </motion.div>
+              <Button
+                as="a"
+                href="#contact"
+                color="default"
+                size="lg"
+                endContent={<ArrowRight className="h-4 w-4" />}
+                className="px-8 font-bold"
+              >
+                Cotizar Proyecto
+              </Button>
+              <Button
+                as="a"
+                href="#services"
+                variant="bordered"
+                size="lg"
+                className="px-8 border-default/50 text-foreground font-semibold"
+              >
+                Nuestros Servicios
+              </Button>
             </motion.div>
           </motion.div>
 
@@ -105,16 +104,13 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-card">
-                <Image
-                  src="/professional-male-developer-portrait-dark-backgrou.jpg"
-                  alt="Nexus Digital Studio - Soluciones Digitales"
-                  fill
-                  className="object-cover opacity-80"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-              </div>
+              <Image
+                isBlurred
+                width={450}
+                src="/professional-male-developer-portrait-dark-backgrou.jpg"
+                alt="Nexus Digital Studio - Soluciones Digitales"
+                className="object-cover opacity-90 rounded-2xl border border-white/10"
+              />
             </motion.div>
           </motion.div>
         </div>

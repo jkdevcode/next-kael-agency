@@ -2,28 +2,30 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { Providers } from "./providers"
 import "./globals.css"
 
-const _inter = Inter({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-  title: "Hola, soy Jos - Desarrollador Full Stack",
-  description: "Desarrollador Full Stack especializado en crear aplicaciones web escalables y robustas",
-    generator: 'v0.app'
+    title: "Nexus Digital Studio - Soluciones Digitales de Alto Impacto",
+    description: "Transformamos ideas complejas en sistemas eficientes, escalables y orientados a resultados.",
 }
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="es">
-      <body className={`font-sans antialiased`}>
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  )
+    return (
+        <html lang="es" suppressHydrationWarning className={`${inter.variable} ${geistMono.variable} light`}>
+            <body className="antialiased font-sans">
+                <Providers>
+                    {children}
+                </Providers>
+                <Analytics />
+            </body>
+        </html>
+    )
 }

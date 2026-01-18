@@ -1,10 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image from "next/image"
+import { Card, CardBody, CardFooter } from "@heroui/card"
+import { Image } from "@heroui/image"
+import { Button } from "@heroui/button"
+import { Chip } from "@heroui/chip"
 import { ExternalLink } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 
 interface ProjectCardProps {
   title: string
@@ -20,58 +21,65 @@ export function ProjectCard({ title, description, image, tags, link }: ProjectCa
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      whileHover={{
-        y: -10,
-        boxShadow: "0 25px 50px -12px rgba(34, 197, 94, 0.15)",
-      }}
       transition={{ duration: 0.3 }}
-      className="group bg-card border border-border rounded-xl overflow-hidden hover:border-primary/60 transition-all duration-300"
+      className="h-full"
     >
-      <div className="relative h-48 overflow-hidden">
-        <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
-        {/* Hover overlay with green tint */}
-        <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
+      <Card
+        isHoverable
+        isPressable
+        className="bg-card border border-border h-full overflow-hidden group transition-all duration-300"
+      >
+        <CardBody className="p-0 relative h-48 overflow-hidden">
+          <Image
+            src={image || "/placeholder.svg"}
+            alt={title}
+            width="100%"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            radius="none"
+          />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 z-10" />
+          {/* Hover overlay with neutral tint */}
+          <div className="absolute inset-0 bg-default-100/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+        </CardBody>
 
-      <div className="p-5">
-        <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{title}</h3>
-        <p className="text-sm text-muted-foreground mb-4 line-clamp-3 leading-relaxed">{description}</p>
-
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {tags.slice(0, 5).map((tag) => (
-            <Badge
-              key={tag}
-              variant="secondary"
-              className="text-xs bg-primary/10 text-primary/90 hover:bg-primary/20 border-0 font-medium"
-            >
-              {tag}
-            </Badge>
-          ))}
-        </div>
+        <CardBody className="p-6 flex-grow">
+          <h3 className="text-xl font-bold mb-3 group-hover:text-default-500 transition-colors duration-300 leading-tight">{title}</h3>
+          <p className="text-sm text-default-500 mb-6 line-clamp-3 leading-relaxed font-medium">{description}</p>
+          <div className="flex flex-wrap gap-2 mb-2">
+            {tags.slice(0, 5).map((tag) => (
+              <Chip
+                key={tag}
+                size="sm"
+                variant="flat"
+                color="default"
+                className="text-[10px] font-bold uppercase tracking-wider bg-default-100"
+              >
+                {tag}
+              </Chip>
+            ))}
+          </div>
+        </CardBody>
 
         {link && (
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+          <CardFooter className="px-6 pb-6 pt-0">
             <Button
-              variant="outline"
-              size="sm"
-              asChild
-              className="w-full bg-transparent border-primary/40 hover:bg-primary/10 hover:border-primary group/btn"
+              as="a"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="flat"
+              color="default"
+              size="md"
+              fullWidth
+              endContent={<ExternalLink className="h-4 w-4" />}
+              className="bg-default-100 font-bold hover:bg-default-200"
             >
-              <a href={link} target="_blank" rel="noopener noreferrer">
-                Visitar
-                <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
-              </a>
+              Ver Proyecto
             </Button>
-          </motion.div>
+          </CardFooter>
         )}
-      </div>
+      </Card>
     </motion.div>
   )
 }
