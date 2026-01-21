@@ -64,15 +64,21 @@ export function TechStack() {
             className="flex gap-4 py-3"
           >
             {duplicatedTech.map((tech, index) => (
-              <Chip
+              <motion.div
                 key={`row1-${index}`}
-                variant="flat"
-                color="default"
-               /*  size="lg" */
-                /* className="flex-shrink-0 px-6 py-6 bg-default-100 hover:bg-default-200 border-none transition-colors duration-200 cursor-default h-auto" */
+                whileHover={{ scale: 1.1 }}
+                className="flex items-center"
               >
-                <span className="text-foreground font-semibold whitespace-nowrap text-base">{tech}</span>
-              </Chip>
+                <Chip
+                  variant="dot"
+                  color="default"
+                  className="border-white/10 bg-zinc-900/50"
+                /*  size="lg" */
+                /* className="flex-shrink-0 px-6 py-6 bg-default-100 hover:bg-default-200 border-none transition-colors duration-200 cursor-default h-auto" */
+                >
+                  <span className="text-foreground font-semibold whitespace-nowrap text-base">{tech}</span>
+                </Chip>
+              </motion.div>
             ))}
           </motion.div>
         </div>
@@ -92,15 +98,21 @@ export function TechStack() {
             className="flex gap-4 py-3"
           >
             {duplicatedTech.map((tech, index) => (
-              <Chip
+              <motion.div
                 key={`row2-${index}`}
-                variant="flat"
-                color="default"
-                size="lg"
-                /* className="flex-shrink-0 px-6 py-6 bg-default-100 hover:bg-default-200 border-none transition-colors duration-200 cursor-default h-auto" */
+                whileHover={{ scale: 1.1 }}
+                className="flex items-center"
               >
-                <span className="text-foreground font-semibold whitespace-nowrap text-base">{tech}</span>
-              </Chip>
+                <Chip
+                  variant="dot"
+                  color="default"
+                  size="lg"
+                  className="border-white/10 bg-zinc-900/50"
+                /* className="flex-shrink-0 px-6 py-6 bg-default-100 hover:bg-default-200 border-none transition-colors duration-200 cursor-default h-auto" */
+                >
+                  <span className="text-foreground font-semibold whitespace-nowrap text-base">{tech}</span>
+                </Chip>
+              </motion.div>
             ))}
           </motion.div>
         </div>

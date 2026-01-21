@@ -8,7 +8,7 @@ const projects = [
     title: "Nexus Raffle Engine",
     description:
       "Plataforma de alta escalabilidad para la gestión y venta de números de rifas en tiempo real. Implementamos una arquitectura capaz de procesar cientos de transacciones simultáneas con sincronización automática.",
-    image: "/online-raffle-lottery-platform-dark-theme-neon.jpg",
+    image: "/professional-male-developer-portrait-dark-backgrou.jpg",
     tags: ["Next.js", "Real-time", "Fintech", "Cloud"],
     link: "#",
   },
@@ -16,14 +16,14 @@ const projects = [
     title: "Booking Hub Pro",
     description:
       "Sistema de gestión de reservas optimizado que redujo el tiempo administrativo en un 60%. Incluye panel de control avanzado, gestión de turnos inteligente y notificaciones automáticas vía WhatsApp.",
-    image: "/barbershop-booking-system-dashboard-dark-theme.jpg",
+    image: "/professional-male-developer-portrait-dark-backgrou.jpg",
     tags: ["SaaS", "Optimization", "Automation", "Dashboard"],
   },
   {
     title: "Vibras E-commerce Suite",
     description:
       "E-commerce de alto rendimiento enfocado en la experiencia de compra fluida. Integra gestión de inventario inteligente, pasarela de pagos segura y carga optimizada para SEO y conversión.",
-    image: "/fashion-ecommerce-store-dark-theme-modern.jpg",
+    image: "/professional-male-developer-portrait-dark-backgrou.jpg",
     tags: ["Next.js", "E-commerce", "AWS", "Performance"],
     link: "#",
   },
@@ -31,7 +31,7 @@ const projects = [
     title: "Event Connect Digital",
     description:
       "Solución de invitaciones interactivas premium que redefine la confirmación de asistencia. Mejora el engagement del invitado con animaciones fluidas y una interfaz intuitiva para dispositivos móviles.",
-    image: "/digital-wedding-invitation-elegant-dark-theme.jpg",
+    image: "/professional-male-developer-portrait-dark-backgrou.jpg",
     tags: ["UX", "Interactive", "Animations", "Frontend"],
     link: "#",
   }
