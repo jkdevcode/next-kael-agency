@@ -1,10 +1,12 @@
 "use client"
 
+import React from "react"
 import { motion } from "framer-motion"
 import { Card, CardBody, CardFooter } from "@heroui/card"
 import { Image } from "@heroui/image"
 import { Button } from "@heroui/button"
 import { Chip } from "@heroui/chip"
+import { Skeleton } from "@heroui/skeleton"
 import { ExternalLink } from "lucide-react"
 
 interface ProjectCardProps {
@@ -16,6 +18,8 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ title, description, image, tags, link }: ProjectCardProps) {
+  const [isLoaded, setIsLoaded] = React.useState(false)
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -27,58 +31,66 @@ export function ProjectCard({ title, description, image, tags, link }: ProjectCa
       <Card
         isHoverable
         isPressable
-        className="bg-card border border-border h-full overflow-hidden group transition-all duration-300"
+        className="bg-zinc-900 border border-white/10 h-[450px] overflow-hidden group transition-all duration-300 relative"
       >
-        <CardBody className="p-0 relative h-48 overflow-hidden">
-          <Image
-            src={image || "/placeholder.svg"}
-            alt={title}
-            width="100%"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            radius="none"
-          />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 z-10" />
-          {/* Hover overlay with neutral tint */}
-          <div className="absolute inset-0 bg-default-100/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-        </CardBody>
+        {/* Full background image */}
+        <div className="absolute inset-0 z-0">
+          <Skeleton isLoaded={isLoaded} className="w-full h-full rounded-none">
+            <Image
+              src={image || "/placeholder.svg"}
+              alt={title}
+              width="100%"
+              height="100%"
+              onLoad={() => setIsLoaded(true)}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+              style={{ height: '100%', width: '100%' }}
+              radius="none"
+            />
+          </Skeleton>
+        </div>
 
-        <CardBody className="p-6 flex-grow">
-          <h3 className="text-xl font-bold mb-3 group-hover:text-default-500 transition-colors duration-300 leading-tight">{title}</h3>
-          <p className="text-sm text-default-500 mb-6 line-clamp-3 leading-relaxed font-medium">{description}</p>
-          <div className="flex flex-wrap gap-2 mb-2">
-            {tags.slice(0, 5).map((tag) => (
-              <Chip
-                key={tag}
-                size="sm"
-                variant="flat"
-                color="default"
-                className="text-[10px] font-bold uppercase tracking-wider bg-default-100"
-              >
-                {tag}
-              </Chip>
-            ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10" />
+
+        <CardBody className="relative z-20 h-full flex flex-col justify-end p-6">
+          <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            <div className="flex flex-wrap gap-2 mb-3">
+              {tags.slice(0, 3).map((tag) => (
+                <Chip
+                  key={tag}
+                  size="sm"
+                  variant="dot"
+                  color="primary"
+                  className="bg-black/50 border border-white/10 text-xs"
+                >
+                  {tag}
+                </Chip>
+              ))}
+            </div>
+
+            <h3 className="text-2xl font-bold mb-2 text-white">{title}</h3>
+
+            <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+              <p className="text-zinc-300 text-sm leading-relaxed mb-4">
+                {description}
+              </p>
+              {link && (
+                <Button
+                  as="a"
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="shadow"
+                  color="primary"
+                  size="sm"
+                  endContent={<ExternalLink className="h-3 w-3" />}
+                  className="font-bold shadow-primary/20"
+                >
+                  Ver Proyecto
+                </Button>
+              )}
+            </div>
           </div>
         </CardBody>
-
-        {link && (
-          <CardFooter className="px-6 pb-6 pt-0">
-            <Button
-              as="a"
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="flat"
-              color="default"
-              size="md"
-              fullWidth
-              endContent={<ExternalLink className="h-4 w-4" />}
-              className="bg-default-100 font-bold hover:bg-default-200"
-            >
-              Ver Proyecto
-            </Button>
-          </CardFooter>
-        )}
       </Card>
     </motion.div>
   )

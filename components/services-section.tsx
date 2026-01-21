@@ -78,10 +78,10 @@ export function ServicesSection() {
               <Card
                 isHoverable
                 isPressable
-                className="bg-card h-full border border-border group transition-all duration-300"
+                className="bg-card h-full border border-white/10 group transition-all duration-300 hover:bg-white/5"
               >
                 <CardHeader className="flex gap-3 px-6 pt-6 pb-2">
-                  <div className="w-12 h-12 bg-default-100 rounded-lg flex items-center justify-center group-hover:bg-default-200 group-hover:scale-110 transition-all duration-300">
+                  <div className="w-12 h-12 bg-default-100 rounded-lg flex items-center justify-center group-hover:bg-default-200 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.15)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)]">
                     <service.icon className="w-6 h-6 text-foreground/80" />
                   </div>
                 </CardHeader>

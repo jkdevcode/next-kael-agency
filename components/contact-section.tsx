@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Linkedin, Instagram, MessageCircle, ArrowRight } from "lucide-react"
 import { Button } from "@heroui/button"
 import { Input, Textarea } from "@heroui/input"
+import { Card, CardBody } from "@heroui/card"
 
 const contactInfo = [
   {
@@ -76,6 +77,7 @@ export function ContactSection() {
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -155,78 +157,89 @@ export function ContactSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-3 bg-default-50/50 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-default-100 shadow-2xl"
+              className="lg:col-span-3"
             >
-              <form className="space-y-10" onSubmit={handleSubmit}>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <Input
-                    label="Nombre"
-                    placeholder="Tu nombre completo"
-                    variant="bordered"
-                    size="lg"
-                    className="font-medium"
-                    color="default"
-                    value={name}
-                    onValueChange={setName}
-                  />
-                  <Input
-                    isRequired
-                    endContent={
-                      <MailIcon className="text-2xl text-default-400 pointer-events-none shrink-0" />
-                    }
-                    label="Correo electrónico"
-                    name="email"
-                    placeholder="tu@email.com"
-                    type="email"
-                    value={email}
-                    variant="bordered"
-                    onValueChange={setEmail}
-                  />
-                </div>
-                <Input
-                  label="Empresa / Proyecto"
-                  placeholder="Nombre de tu negocio"
-                  variant="bordered"
-                  size="lg"
-                  className="font-medium"
-                  color="default"
-                  value={company}
-                  onValueChange={setCompany}
-                />
-                <Textarea
-                  disableAnimation
-                  disableAutosize
-                  isRequired
-                  classNames={{
-                    base: "max-w-xl",
-                    input: "resize-y min-h-[80px]",
-                  }}
-                  endContent={
-                    <MessageIcon className="text-2xl text-default-400 pointer-events-none shrink-0" />
-                  }
-                  label="Mensaje"
-                  minRows={4}
-                  name="message"
-                  placeholder="Escribe tu mensaje aquí..."
-                  value={message}
-                  variant="bordered"
-                  color="default"
-                  onValueChange={setMessage}
-                />
-                <Button
-                  type="submit"
-                  color="default"
-                  size="lg"
-                  fullWidth
-                  className="font-bold text-lg h-16 bg-foreground text-background"
-                  endContent={<ArrowRight className="h-5 w-5" />}
-                >
-                  Enviar Mensaje
-                </Button>
-                <p className="text-center text-sm text-default-400 mt-4 font-medium tracking-wide">
-                  Te responderemos en menos de 24 horas hábiles.
-                </p>
-              </form>
+              <Card className="bg-zinc-900/60 backdrop-blur-xl border border-white/10 p-6 md:p-10 shadow-2xl">
+                <CardBody>
+                  <form className="space-y-8" onSubmit={handleSubmit}>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <Input
+                        label="Nombre"
+                        placeholder="Tu nombre completo"
+                        variant="bordered"
+                        radius="lg"
+                        size="lg"
+                        className="font-medium"
+                        classNames={{ inputWrapper: "border-white/20 hover:border-white/40 bg-white/5" }}
+                        value={name}
+                        onValueChange={setName}
+                      />
+                      <Input
+                        isRequired
+                        endContent={
+                          <MailIcon className="text-2xl text-default-400 pointer-events-none shrink-0" />
+                        }
+                        label="Correo electrónico"
+                        name="email"
+                        placeholder="tu@email.com"
+                        type="email"
+                        value={email}
+                        variant="bordered"
+                        radius="lg"
+                        classNames={{ inputWrapper: "border-white/20 hover:border-white/40 bg-white/5" }}
+                        onValueChange={setEmail}
+                      />
+                    </div>
+                    <Input
+                      label="Empresa / Proyecto"
+                      placeholder="Nombre de tu negocio"
+                      variant="bordered"
+                      radius="lg"
+                      size="lg"
+                      className="font-medium"
+                      classNames={{ inputWrapper: "border-white/20 hover:border-white/40 bg-white/5" }}
+                      value={company}
+                      onValueChange={setCompany}
+                    />
+                    <Textarea
+                      disableAnimation
+                      disableAutosize
+                      isRequired
+                      classNames={{
+                        base: "max-w-xl",
+                        input: "resize-y min-h-[80px]",
+                        inputWrapper: "border-white/20 hover:border-white/40 bg-white/5"
+                      }}
+                      endContent={
+                        <MessageIcon className="text-2xl text-default-400 pointer-events-none shrink-0" />
+                      }
+                      label="Mensaje"
+                      minRows={4}
+                      name="message"
+                      placeholder="Escribe tu mensaje aquí..."
+                      value={message}
+                      variant="bordered"
+                      radius="lg"
+                      onValueChange={setMessage}
+                    />
+                    <Button
+                      type="submit"
+                      color="primary"
+                      size="lg"
+                      fullWidth
+                      radius="lg"
+                      isLoading={isLoading}
+                      className="font-bold text-lg h-16 shadow-lg shadow-primary/20"
+                      endContent={!isLoading && <ArrowRight className="h-5 w-5" />}
+                    >
+                      {isLoading ? "Enviando..." : "Enviar Mensaje"}
+                    </Button>
+                    <p className="text-center text-sm text-zinc-500 mt-4 font-medium tracking-wide">
+                      Te responderemos en menos de 24 horas hábiles.
+                    </p>
+                  </form>
+                </CardBody>
+              </Card>
             </motion.div>
           </div>
         </div>
