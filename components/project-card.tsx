@@ -31,7 +31,7 @@ export function ProjectCard({ title, description, image, tags, link }: ProjectCa
       <Card
         isHoverable
         isPressable
-        className="bg-zinc-900 border border-white/10 h-[450px] overflow-hidden group transition-all duration-300 relative"
+        className="bg-zinc-900 border border-white/10 h-112.5 overflow-hidden group transition-all duration-300 relative"
       >
         {/* Full background image */}
         <div className="absolute inset-0 z-0">
@@ -49,7 +49,7 @@ export function ProjectCard({ title, description, image, tags, link }: ProjectCa
           </Skeleton>
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent z-10" />
 
         <CardBody className="relative z-20 h-full flex flex-col justify-end p-6">
           <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">

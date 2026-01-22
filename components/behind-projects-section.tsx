@@ -8,62 +8,62 @@ import { cn } from "@/lib/utils"
 
 const projectStories = [
   {
-    title: "Sistema para Barberías",
+    title: "Blade & Grain Premium",
     description:
-      "Proyecto final desarrollado en grupo para la materia Programación IV (UTN). Consiste en una aplicación web modular que gestiona reservas, servicios y confirmaciones de clientes.",
+      "Ecosistema digital de alta gama que integra una landing page de conversión con un robusto motor de gestión interna desarrollado para Programación IV (UTN).",
     problem:
-      "Los turnos en barberías suelen gestionarse por WhatsApp o de forma manual, generando confusión y pérdida de tiempo. Este sistema automatiza ese proceso y mejora la organización del negocio.",
+      "La gestión manual de turnos generaba ineficiencias operativas y una experiencia de usuario fragmentada.",
     solution: [
-      "Desarrollé el backend con NestJS, TypeORM y JWT para la autenticación del panel administrativo.",
-      "Implementamos un flujo de reservas en 4 pasos con validación de horarios y comunicación por WhatsApp.",
-      "Diseñamos un panel de administración para gestionar servicios, turnos y control de asistencia de clientes.",
-      "Incluimos documentación de toda la API utilizando Swagger, facilitando las pruebas y la comprensión del backend.",
-      "El sistema fue pensado desde su planificación con potencial para escalar a un servicio SaaS adaptable a distintos rubros.",
+      "Arquitectura moderna con Next.js 16 y Tailwind v4 para una interfaz ultra rápida y estética de lujo.",
+      "Backend escalable en NestJS con TypeORM y autenticación JWT para una gestión de datos segura.",
+      "Flujo de reserva optimizado con validación de horarios en tiempo real y notificaciones vía WhatsApp.",
+      "API totalmente documentada con Swagger, garantizando un sistema profesional y mantenible.",
     ],
     learnings: [
-      "Trabajo colaborativo con control de versiones en Git y división de módulos por responsabilidades.",
-      "Diseño modular del backend en NextJS con buenas prácticas, validaciones y documentación clara.",
-      "Integración entre frontend y backend usando Axios y guards JWT.",
-      "Diseño de interfaces Responsivas con Tailwind y enfoque UX.",
+      "Implementación de animaciones con Framer Motion para elevar la percepción de calidad del producto.",
+      "Diseño modular orientado a responsabilidades (Clean Architecture) y control de versiones profesional.",
+      "Uso de guards de seguridad y validaciones estrictas para proteger la integridad del sistema.",
     ],
-    color: "primary", // HeroUI Primary (Blue)
+    color: "primary",
   },
   {
-    title: "Web Vibras",
+    title: "Vibras E-commerce Suite",
     description:
-      "E-commerce profesional para una marca de indumentaria. Incluye catálogo de productos, carrito, checkout y panel de gestión para los administradores.",
+      "Infraestructura de comercio electrónico de alto rendimiento diseñada para escalar marcas de indumentaria mediante una experiencia de compra fluida.",
     problem:
-      "La marca necesitaba una plataforma robusta para escalar sus ventas online y centralizar la gestión de stock que antes se hacía de forma dispersa.",
+      "Necesidad de centralizar la gestión de stock y mejorar la velocidad de carga para reducir el abandono de carritos.",
     solution: [
-      "Arquitectura de microservicios ligera para separar el catálogo de la gestión de pedidos.",
-      "Pasarela de pagos integrada con notificaciones instantáneas.",
-      "Panel de control intuitivo para la actualización masiva de productos y descuentos.",
+      "Uso de Vite 6 y React 19 para garantizar una navegación instantánea y una experiencia de usuario reactiva.",
+      "Integración de animaciones avanzadas y carga diferida (Lazy Loading) para maximizar el impacto visual sin sacrificar velocidad.",
+      "Panel de control intuitivo para actualización masiva de productos y gestión centralizada de pedidos.",
+      "Estrategia de conversión: diseño optimizado para completar el checkout en la menor cantidad de pasos posible.",
     ],
     learnings: [
-      "Optimización de imágenes y carga diferida para mejorar el SEO y performance.",
-      "Implementación de flujos de recuperación de carritos abandonados.",
-      "Escalabilidad de bases de datos relacionales en entornos de alta demanda.",
+      "Optimización avanzada de recursos (WebP/AVIF) y técnicas de SEO técnico para mejorar el posicionamiento.",
+      "Manejo de estados complejos para carritos de compra y flujos de recuperación de usuarios.",
+      "Arquitectura de componentes reutilizables para facilitar la evolución estética de la plataforma.",
     ],
-    color: "secondary", // HeroUI Secondary (Purple/Pink depending on theme)
+    color: "secondary",
   },
   {
     title: "Booking Hub Pro",
     description:
-      "SaaS de gestión de reservas para centros deportivos de alto rendimiento. Optimización de horarios y gestión de membresías.",
+      "Plataforma SaaS de gestión de reservas crítica, diseñada bajo el concepto de 'Confianza Tranquila' para servicios profesionales.",
     problem:
-      "Los centros deportivos perdían hasta un 30% de ingresos por cancelaciones de último minuto y falta de automatización en pagos.",
+      "Pérdidas económicas por cancelaciones y falta de automatización en la gestión de citas de alto volumen.",
     solution: [
-      "Sistema de prepago obligatorio mediante Stripe para asegurar la reserva.",
-      "Algoritmo de optimización de canchas que reduce tiempos muertos en un 25%.",
-      "API de notificaciones push para recordatorios y promociones personalizadas.",
+      "Interfaz construida con HeroUI siguiendo estándares estrictos de accesibilidad WAI-ARIA.",
+      "Sistema de depósitos de seguridad para asegurar el compromiso del cliente y eliminar pérdidas financieras.",
+      "Dashboard analítico que transforma datos operativos en métricas clave para la toma de decisiones.",
+      "Optimización de rendimiento mediante Server Components, reduciendo el JS en el cliente para mayor agilidad.",
     ],
     learnings: [
-      "Manejo de estados complejos y concurrencia en reservas en tiempo real.",
-      "Implementación de dashboards analíticos para dueños de negocios.",
-      "Seguridad avanzada en transacciones financieras integradas.",
+      "Implementación de esquemas JSON-LD para optimizar el SEO local y la visibilidad en buscadores.",
+      "Manejo de concurrencia en tiempo real para evitar conflictos de horarios en entornos de alta demanda.",
+      "Enfoque Mobile-First absoluto, asegurando que la gestión del negocio sea perfecta desde cualquier smartphone.",
     ],
-    color: "danger", // HeroUI Warning (Yellow/Orange)
-  },
+    color: "danger",
+  }
 ]
 
 export function BehindProjectsSection() {
@@ -131,7 +131,7 @@ export function BehindProjectsSection() {
                       <ul className="pl-12 space-y-2">
                         {story.solution.map((item, i) => (
                           <li key={i} className="flex gap-3 text-default-500 text-sm/7 md:text-base/7 font-medium">
-                            <span className={cn("mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0", theme.bullet)} />
+                            <span className={cn("mt-2 w-1.5 h-1.5 rounded-full shrink-0", theme.bullet)} />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -149,7 +149,7 @@ export function BehindProjectsSection() {
                       <ul className="pl-12 space-y-2">
                         {story.learnings.map((item, i) => (
                           <li key={i} className="flex gap-3 text-default-500 text-sm/7 md:text-base/7 font-medium">
-                            <span className={cn("mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0", theme.bullet)} />
+                            <span className={cn("mt-2 w-1.5 h-1.5 rounded-full shrink-0", theme.bullet)} />
                             <span>{item}</span>
                           </li>
                         ))}
