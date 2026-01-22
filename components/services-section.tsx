@@ -1,33 +1,28 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardHeader, CardBody } from "@heroui/card"
-import { Code2, Server, Sparkles, Wrench } from "lucide-react"
+import { Icon } from "@iconify/react"
 
 const services = [
   {
-    icon: Code2,
-    title: "Desarrollo Web de Alto Rendimiento",
-    description:
-      "Construimos plataformas rápidas, seguras y escalables diseñadas para convertir visitantes en clientes y soportar el crecimiento de tu negocio.",
+    icon: "solar:scissors-linear",
+    title: "Barberías y Salones",
+    description: "Sistemas de reserva y galerías visuales que llenan tu agenda.",
   },
   {
-    icon: Server,
-    title: "Sistemas y APIs a Medida",
-    description:
-      "Optimizamos tu infraestructura digital con backends robustos e integraciones que centralizan tu operación y eliminan fricciones innecesarias.",
+    icon: "solar:cup-linear",
+    title: "Cafeterías",
+    description: "Menús digitales y presencia local para atraer más comensales.",
   },
   {
-    icon: Sparkles,
-    title: "Experiencias de Usuario (UX/UI)",
-    description:
-      "Diseñamos interfaces intuitivas que no solo sorprenden visualmente, sino que están estratégicamente pensadas para facilitar la interacción y el éxito del usuario.",
+    icon: "solar:heart-pulse-linear",
+    title: "Salud",
+    description: "Sitios web profesionales que transmiten confianza y seguridad.",
   },
   {
-    icon: Wrench,
-    title: "Automatización de Procesos",
-    description:
-      "Transformamos tareas manuales en flujos automáticos inteligentes, permitiendo que tu equipo se enfoque en actividades que generen valor real.",
+    icon: "solar:shop-linear",
+    title: "Negocios Locales",
+    description: "Estrategias digitales para posicionarte en tu zona.",
   },
 ]
 
@@ -42,24 +37,34 @@ const containerVariants = {
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-32 bg-default-50/5">
-      <div className="container max-w-7xl mx-auto px-4 md:px-8">
+    <section id="services" className="relative py-24 bg-white dark:bg-[#050505] transition-colors duration-500 border-t border-neutral-100 dark:border-neutral-900 overflow-hidden">
+
+      {/* Background Elements (Same as Hero) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+        {/* Adjusted blob position for this section */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neutral-200 dark:bg-neutral-800/10 blur-[120px] rounded-full opacity-40" />
+      </div>
+
+      <div className="container relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Soluciones que Impulsan tu Negocio</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto text-lg md:text-xl leading-relaxed text-pretty">
-            En Nexus Digital Studio combinamos estrategia de negocio con tecnología de punta para entregar productos digitales
-            que generan un impacto real en tu rentabilidad.
+          <h2 className="text-3xl lg:text-4xl font-medium tracking-tight mb-4 text-neutral-900 dark:text-white">
+            ¿Para quién es esto?
+          </h2>
+          <p className="text-neutral-500 dark:text-neutral-400">
+            Diseñamos soluciones digitales específicas para tu industria.
           </p>
         </motion.div>
 
@@ -68,28 +73,20 @@ export function ServicesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {services.map((service, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
             >
-              <Card
-                isHoverable
-                isPressable
-                className="bg-card h-full border border-white/10 group transition-all duration-300 hover:bg-white/5"
-              >
-                <CardHeader className="flex gap-3 px-6 pt-6 pb-2">
-                  <div className="w-12 h-12 bg-default-100 rounded-lg flex items-center justify-center group-hover:bg-default-200 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.15)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)]">
-                    <service.icon className="w-6 h-6 text-foreground/80" />
-                  </div>
-                </CardHeader>
-                <CardBody className="px-6 pb-6">
-                  <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-                </CardBody>
-              </Card>
+              <div className="group p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/50 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 h-full backdrop-blur-sm">
+                <div className="w-12 h-12 rounded-xl bg-white dark:bg-neutral-800 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300 border border-neutral-100 dark:border-neutral-700">
+                  <Icon icon={service.icon} className="text-neutral-800 dark:text-white" width="24" />
+                </div>
+                <h3 className="text-base font-medium mb-2 text-neutral-900 dark:text-white">{service.title}</h3>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{service.description}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
