@@ -4,37 +4,38 @@ import { motion } from "framer-motion"
 import { ProjectCard } from "./project-card"
 
 const projects = [
-  {
-    title: "Nexus Raffle Engine",
+{
+    title: "Blade & Grain Premium",
     description:
-      "Plataforma de alta escalabilidad para la gestión y venta de números de rifas en tiempo real. Implementamos una arquitectura capaz de procesar cientos de transacciones simultáneas con sincronización automática.",
-    image: "/professional-male-developer-portrait-dark-backgrou.jpg",
-    tags: ["Next.js", "Real-time", "Fintech", "Cloud"],
+      "Landing page de lujo para barberías de alta gama. Enfocada en la conversión mediante una arquitectura moderna en Next.js 16, animaciones fluidas y reserva de citas integrada.",
+    image: "/barberia.png",
+    tags: ["Next.js 16", "Tailwind v4", "Framer Motion", "Conversion"],
     link: "#",
   },
   {
-    title: "Booking Hub Pro",
+    title: "Artisan Coffee Landing",
     description:
-      "Sistema de gestión de reservas optimizado que redujo el tiempo administrativo en un 60%. Incluye panel de control avanzado, gestión de turnos inteligente y notificaciones automáticas vía WhatsApp.",
-    image: "/professional-male-developer-portrait-dark-backgrou.jpg",
-    tags: ["SaaS", "Optimization", "Automation", "Dashboard"],
-  },
-  {
-    title: "Vibras E-commerce Suite",
-    description:
-      "E-commerce de alto rendimiento enfocado en la experiencia de compra fluida. Integra gestión de inventario inteligente, pasarela de pagos segura y carga optimizada para SEO y conversión.",
-    image: "/professional-male-developer-portrait-dark-backgrou.jpg",
-    tags: ["Next.js", "E-commerce", "AWS", "Performance"],
+      "Sitio de alto impacto visual para cafeterías de especialidad. Maximiza el engagement mediante storytelling visual, animaciones avanzadas con GSAP y una carga ultra rápida con Vite.",
+    image: "/cafeteria.png",
+    tags: ["React 19", "Vite 6", "GSAP", "Performance"],
     link: "#",
   },
   {
+    title: "Vanguard Medical Portal",
+    description:
+      "Plataforma médica profesional diseñada para generar confianza. Prioriza la accesibilidad (WAI-ARIA) y la facilidad de agendamiento para pacientes, con un diseño limpio y moderno.",
+    image: "/salud.png",
+    tags: ["Next.js 16", "HeroUI", "Healthcare", "Accessibility"],
+    link: "#",
+  }
+  /* {
     title: "Event Connect Digital",
     description:
       "Solución de invitaciones interactivas premium que redefine la confirmación de asistencia. Mejora el engagement del invitado con animaciones fluidas y una interfaz intuitiva para dispositivos móviles.",
     image: "/professional-male-developer-portrait-dark-backgrou.jpg",
     tags: ["UX", "Interactive", "Animations", "Frontend"],
     link: "#",
-  }
+  } */
 ]
 
 export function ProjectsSection() {

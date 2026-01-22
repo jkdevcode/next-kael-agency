@@ -159,7 +159,7 @@ export function ContactSection() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-3"
             >
-              <Card className="bg-zinc-900/60 backdrop-blur-xl border border-white/10 p-6 md:p-10 shadow-2xl">
+             {/*  <Card className="bg-zinc-900/60 backdrop-blur-xl border border-white/10 p-6 md:p-10 shadow-2xl">
                 <CardBody>
                   <form className="space-y-8" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -239,7 +239,7 @@ export function ContactSection() {
                     </p>
                   </form>
                 </CardBody>
-              </Card>
+              </Card> */}
             </motion.div>
           </div>
         </div>

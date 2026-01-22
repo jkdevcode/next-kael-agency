@@ -1,158 +1,128 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Button } from "@heroui/button"
-import { Image } from "@heroui/image"
-import { ArrowRight } from "lucide-react"
+import { motion } from "framer-motion"
+import { Icon } from "@iconify/react"
+import { appColor } from "@/config/theme"
 
 export function HeroSection() {
-  return (
-    <section id="home" className="min-h-[90vh] flex items-center justify-center pt-32 pb-24 relative overflow-hidden bg-black">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
+  const colorClasses: Record<string, string> = {
+    default: "bg-default text-default-foreground",
+    primary: "bg-primary text-white shadow-primary/40",
+    secondary: "bg-secondary text-white shadow-secondary/40",
+    success: "bg-success text-white shadow-success/40",
+    warning: "bg-warning text-black shadow-warning/40",
+    danger: "bg-danger text-white shadow-danger/40",
+  };
 
-      {/* Ambient background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl opacity-30 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-transparent blur-[100px]" />
+  return (
+    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-white dark:bg-[#050505] transition-colors duration-500">
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-neutral-200 dark:bg-neutral-800/20 blur-[120px] rounded-full opacity-50" />
       </div>
 
-      <div className="container max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex-1 max-w-3xl"
-          >
+      <div className="container relative z-10 px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+
+          {/* Left Content */}
+          <div className="flex-1 text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 mb-8 backdrop-blur-sm"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-xs font-medium tracking-wide text-neutral-600 dark:text-neutral-400 uppercase">
+                Disponible para proyectos
+              </span>
+            </motion.div>
+
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-[1.1] tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-400 to-zinc-500"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-5xl lg:text-7xl font-medium tracking-tight text-neutral-900 dark:text-white mb-6 leading-[1.1]"
             >
-              Escala tu Negocio con <br /><span className="text-default-400 italic font-light">Soluciones Digitales</span> de Alto Impacto
+              Transformamos <br />
+              <span className="text-neutral-400 dark:text-neutral-500">ideas complejas en</span> <br />
+              productos digitales.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-lg md:text-xl text-default-500 mb-8 font-medium tracking-wide uppercase"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-lg text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto lg:mx-0 mb-10 font-light leading-relaxed"
             >
-              Nexus Digital Studio
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-zinc-400 mb-10 text-pretty leading-relaxed max-w-2xl"
-            >
-              Transformamos ideas complejas en sistemas eficientes, escalables y orientados a resultados.
-              Ayudamos a empresas y startups a dominar el entorno digital con tecnología de vanguardia.
+              Ayudamos a marcas ambiciosas a destacar con diseño de clase mundial y desarrollo web de alto rendimiento. Sin burocracia, solo resultados.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-4"
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
             >
               <Button
-                as="a"
-                href="#contact"
-                color="primary"
                 size="lg"
-                variant="shadow"
-                endContent={<ArrowRight className="h-4 w-4" />}
-                className="px-8 font-bold shadow-primary/40"
+                color={appColor}
+                className={`font-medium px-8 h-12 ${colorClasses[appColor] || ""}`}
+                endContent={<Icon icon="solar:arrow-right-linear" width={18} />}
               >
-                Cotizar Proyecto
+                Iniciar proyecto
               </Button>
               <Button
-                as="a"
-                href="#services"
+                size="lg"
                 variant="bordered"
-                size="lg"
-                className="px-8 border-default/50 text-white font-semibold hover:bg-white/5"
+                className="border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300 font-medium px-8 h-12 hover:bg-neutral-50 dark:hover:bg-neutral-900"
               >
-                Nuestros Servicios
+                Explorar trabajo
               </Button>
             </motion.div>
-          </motion.div>
+          </div>
 
+          {/* Right Content: Abstract Visual */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative group"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="flex-1 w-full relative"
           >
-            <motion.div
-              className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px]"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              {/* Scanning Effect Overlay */}
-              <motion.div
-                initial={{ top: "0%" }}
-                animate={{ top: "100%" }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                  repeatDelay: 1
-                }}
-                className="absolute left-0 right-0 h-1 bg-cyan-500/50 blur-sm z-30 pointer-events-none"
-                style={{ boxShadow: "0 0 20px 2px rgba(6,182,212,0.5)" }}
-              />
-              <div className="absolute inset-0 z-30 bg-gradient-to-b from-cyan-500/5 to-transparent pointer-events-none opacity-50" />
+            <div className="relative w-full aspect-square max-w-[500px] mx-auto">
 
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl transition-all duration-500 hover:bg-primary/30" />
-
-              {/* Image Container with Border */}
-              <div className="relative rounded-2xl border border-white/10 overflow-hidden bg-zinc-900/50">
-                <Image
-                  isBlurred
-                  width={450}
-                  src="/professional-male-developer-portrait-dark-backgrou.jpg"
-                  alt="Nexus Digital Studio - Soluciones Digitales"
-                  className="object-cover opacity-90 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105"
-                />
-
-                {/* Digital Particles Simulation (CSS based dots) */}
-                <div className="absolute inset-0 z-20 pointer-events-none opacity-30 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
-              </div>
-
-            </motion.div>
-
-            {/* Floating Elements (Decorations) */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 w-24 h-24 bg-zinc-900/80 backdrop-blur-md border border-white/10 rounded-xl z-20 hidden md:flex items-center justify-center p-4 shadow-xl"
-            >
-              <div className="space-y-2 w-full">
-                <div className="h-2 w-full bg-cyan-500/20 rounded animate-pulse" />
-                <div className="h-2 w-2/3 bg-cyan-500/40 rounded" />
-              </div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-8 -left-8 w-32 h-16 bg-zinc-900/80 backdrop-blur-md border border-white/10 rounded-xl z-20 hidden md:flex items-center justify-center p-4 shadow-xl"
-            >
-              <div className="flex gap-2">
-                <div className="w-8 h-8 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-cyan-400 rounded-full animate-ping" />
+              {/* Card 1 */}
+              <div className="absolute top-0 right-0 w-3/4 aspect-[4/3] bg-white/5 backdrop-blur-md dark:bg-neutral-900/40 rounded-2xl p-4 shadow-2xl transform translate-x-4 translate-y-4 lg:translate-y-0 z-10 border border-neutral-200 dark:border-neutral-800">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/80"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/80"></div>
                 </div>
-                <div className="flex-1 space-y-1">
-                  <div className="h-2 w-12 bg-zinc-700/50 rounded" />
-                  <div className="h-1.5 w-8 bg-zinc-800 rounded" />
+                <div className="flex gap-4">
+                  <div className="w-1/3 space-y-3">
+                    <div className="h-2 w-full bg-neutral-200 dark:bg-neutral-800 rounded"></div>
+                    <div className="h-2 w-2/3 bg-neutral-200 dark:bg-neutral-800 rounded"></div>
+                    <div className="h-24 w-full bg-neutral-100 dark:bg-neutral-800/50 rounded-lg mt-4"></div>
+                  </div>
+                  <div className="w-2/3 bg-neutral-100 dark:bg-neutral-900 rounded-lg h-32 flex items-center justify-center border border-dashed border-neutral-300 dark:border-neutral-700">
+                    <div className="w-8 h-8 rounded-full border border-neutral-300 dark:border-neutral-700 flex items-center justify-center">
+                      <div className="w-2 h-2 bg-neutral-400 dark:bg-neutral-600 rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+
+              {/* Card 2 (Background) */}
+              <div className="absolute bottom-8 left-0 w-3/4 aspect-[4/3] bg-neutral-100 dark:bg-neutral-900 rounded-2xl p-4 opacity-50 transform -translate-x-4 scale-95 -z-10 border border-neutral-200 dark:border-neutral-800"></div>
+
+            </div>
           </motion.div>
+
         </div>
       </div>
     </section>
