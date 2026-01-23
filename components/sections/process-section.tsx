@@ -8,7 +8,7 @@ import { slideUp, staggerContainer } from "@/lib/animations";
 
 export function ProcessSection() {
     return (
-        <section className="relative py-24 bg-neutral-50/50 dark:bg-neutral-900/20 border-y border-neutral-100 dark:border-neutral-900 overflow-hidden">
+        <section id="process" className="relative py-24 bg-neutral-50/50 dark:bg-neutral-900/20 border-y border-neutral-100 dark:border-neutral-900 overflow-hidden">
             <BackgroundGrid />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">

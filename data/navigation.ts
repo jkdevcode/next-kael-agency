@@ -1,9 +1,10 @@
 
 export const navMenuItems = [
-    { label: "Work", href: "#" },
-    { label: "Studio", href: "#" },
-    { label: "Process", href: "#" },
-    { label: "Pricing", href: "#" },
+    { label: "Servicios", href: "#services" },
+/*     { label: "Soluciones", href: "#solutions" }, */
+    { label: "Proyectos", href: "#projects" },
+/*     { label: "Proceso", href: "#process" }, */
+    { label: "Nosotros", href: "#why-us" },
 ];
 
 export const footerLinks = {
