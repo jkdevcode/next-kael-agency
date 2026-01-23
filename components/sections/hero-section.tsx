@@ -11,7 +11,7 @@ import { slideUp, fadeIn } from "@/lib/animations";
 
 export function HeroSection() {
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-white dark:bg-[#050505] transition-colors duration-500">
+        <section id="hero" className="relative min-h-[calc(100vh-50px)] flex items-center justify-center pt-20 overflow-hidden bg-white dark:bg-[#050505] transition-colors duration-500">
             <BackgroundGrid />
 
             {/* Additional Glow for Hero - keeping strictly visual but simple */}
