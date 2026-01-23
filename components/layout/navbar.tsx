@@ -83,7 +83,7 @@ export function Navbar() {
                         as={Link}
                         href="#contact"
                         variant="light"
-                        className="text-sm font-medium text-neutral-900 dark:text-white bg-neutral-100 dark:bg-white/5 hover:bg-neutral-200 dark:hover:bg-white/10 border border-neutral-200 dark:border-white/10 rounded-full px-6 transition-all group"
+                        className="text-sm font-medium text-neutral-900 dark:text-white bg-neutral-100 dark:bg-white/5 hover:bg-neutral-200 dark:hover:bg-white/10 border border-neutral-200 dark:border-white/10 px-6 transition-all group"
                         endContent={
                             <Icon
                                 icon="solar:arrow-right-linear"
@@ -100,9 +100,9 @@ export function Navbar() {
                 {navMenuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item.label}-${index}`}>
                         <Link
-                            className="w-full text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-3xl font-light py-4"
+                            className="w-full text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-xl font-medium py-2"
                             href={item.href}
-                            size="lg"
+                            size="sm"
                         >
                             {item.label}
                         </Link>
@@ -113,7 +113,7 @@ export function Navbar() {
                         as={Link}
                         href="#contact"
                         fullWidth
-                        className="text-white dark:text-black bg-neutral-900 dark:bg-white text-lg font-medium py-6 rounded-full"
+                        className="text-lg font-medium text-neutral-900 dark:text-white bg-neutral-100 dark:bg-white/5 hover:bg-neutral-200 dark:hover:bg-white/10 border border-neutral-200 dark:border-white/10 py-6 transition-all group"
                         endContent={<Icon icon="solar:arrow-right-linear" />}
                     >
                         Contact
