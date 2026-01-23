@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import { projects } from "@/data/projects";
 import { ProjectVisuals } from "@/components/ui/project-visuals";
 import { slideUp, staggerContainer } from "@/lib/animations";
+import { Link } from "@heroui/link";
 
 export function ProjectsSection() {
     return (
@@ -35,18 +36,26 @@ export function ProjectsSection() {
                         variants={slideUp}
                         className="group cursor-pointer"
                     >
-                        <div className="relative aspect-[4/3] bg-neutral-100 dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 overflow-hidden mb-6">
-                            {ProjectVisuals[project.id as keyof typeof ProjectVisuals]}
-                        </div>
-                        <div className="flex justify-between items-start">
-                            <div>
-                                <h3 className="text-lg font-medium text-neutral-900 dark:text-white">{project.title}</h3>
-                                <p className="text-sm text-neutral-500">{project.category}</p>
+                        <Link
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group cursor-pointer block"
+                        >
+                            <div className="relative aspect-[4/3] bg-neutral-100 dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 overflow-hidden mb-6">
+                                {ProjectVisuals[project.id as keyof typeof ProjectVisuals]?.(project.image)}
                             </div>
-                            <div className="w-8 h-8 rounded-full border border-neutral-200 dark:border-neutral-800 flex items-center justify-center group-hover:bg-neutral-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-colors">
-                                <Icon icon="solar:arrow-right-linear" />
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <h3 className="text-lg font-medium text-neutral-900 dark:text-white">{project.title}</h3>
+                                    <p className="text-sm text-neutral-500">{project.category}</p>
+                                </div>
+                                <div className="w-8 h-8 rounded-full border border-neutral-200 dark:border-neutral-800 flex items-center justify-center group-hover:bg-neutral-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-colors">
+                                    <Icon icon="solar:arrow-right-linear" />
+                                </div>
                             </div>
-                        </div>
+                        </Link>
+
                     </motion.div>
                 ))}
             </motion.div>

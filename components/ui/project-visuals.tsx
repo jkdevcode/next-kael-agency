@@ -2,14 +2,14 @@
 
 import { Icon } from "@iconify/react";
 
-export const ProjectVisuals = {
-    "blade-and-grain": (
+export const ProjectVisuals: Record<string, (image: string) => React.ReactNode> = {
+    "blade-and-grain": (image: string) => (
         <div className="absolute inset-4 flex items-center justify-center">
             <div className="relative w-full h-full rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 overflow-hidden transition-transform duration-500 group-hover:scale-[1.015]">
                 {/* Canvas interno con ajuste de color por tema */}
                 <div className="absolute inset-3 rounded-xl overflow-hidden bg-neutral-200 dark:bg-neutral-950 flex items-center justify-center">
                     <img
-                        src="/blade-and-grain.png"
+                        src={image}
                         alt="Blade & Grain"
                         className="w-full h-full object-contain p-4 opacity-60 dark:opacity-40 transition-transform duration-700 group-hover:scale-110"
                     />
@@ -25,9 +25,9 @@ export const ProjectVisuals = {
                         </div>
                     </div>
 
-                    <div className="flex-1 flex flex-col items-center justify-center text-center">
-                        <div className="w-16 h-16 rounded-full border border-amber-600/30 bg-white/40 dark:bg-black/40 backdrop-blur-md flex items-center justify-center mb-4 shadow-xl">
-                            <Icon icon="solar:scissors-linear" className="text-amber-600 dark:text-amber-500 w-7 h-7" />
+                    <div className="flex-1 flex flex-col items-center justify-center text-center p-4">
+                        <div className="lg:w-16 lg:h-16 w-10 h-10 rounded-full border border-amber-600/30 bg-white/40 dark:bg-black/40 backdrop-blur-md flex items-center justify-center mb-4 shadow-xl">
+                            <Icon icon="solar:scissors-linear" className="text-amber-600 dark:text-amber-500 lg:w-8 lg:h-8 w-6 h-6" />
                         </div>
                         <div className="w-32 h-3 bg-neutral-400/30 dark:bg-neutral-200/20 rounded-full mb-2" />
                         <div className="w-24 h-2 bg-neutral-400/20 dark:bg-neutral-200/10 rounded-full" />
@@ -37,12 +37,12 @@ export const ProjectVisuals = {
         </div>
     ),
 
-    "coffee-shop": (
+    "coffee-shop": (image: string) => (
         <div className="absolute inset-4 flex items-center justify-center">
             <div className="relative w-full h-full rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 overflow-hidden transition-transform duration-500 group-hover:scale-[1.015]">
                 <div className="absolute inset-3 rounded-xl overflow-hidden bg-[#EFEDE6] dark:bg-[#1a110c] flex items-center justify-center">
                     <img
-                        src="/coffee-shop.png"
+                        src={image}
                         alt="Coffee Shop"
                         className="w-full h-full object-contain p-4 opacity-70 dark:opacity-40 transition-transform duration-700 group-hover:scale-110"
                     />
@@ -53,13 +53,13 @@ export const ProjectVisuals = {
                     <div className="h-12 px-5 flex items-center justify-between border-b border-black/5 dark:border-white/5 bg-white/20 dark:bg-black/20 backdrop-blur-sm">
                         <div className="w-20 h-1.5 bg-neutral-400 dark:bg-white/20 rounded-full" />
                         <div className="w-8 h-4 bg-[#C4A484]/20 border border-[#C4A484]/30 rounded flex items-center justify-center">
-                             <div className="w-4 h-0.5 bg-[#C4A484] rounded-full" />
+                            <div className="w-4 h-0.5 bg-[#C4A484] rounded-full" />
                         </div>
                     </div>
 
-                    <div className="flex-1 flex flex-col items-center justify-center text-center">
-                        <div className="w-16 h-16 rounded-full border border-[#C4A484]/30 bg-white/40 dark:bg-black/40 backdrop-blur-md flex items-center justify-center mb-4 shadow-xl">
-                            <Icon icon="lucide:coffee" className="text-[#8B5E3C] dark:text-[#C4A484] w-7 h-7" />
+                    <div className="flex-1 flex flex-col items-center justify-center text-center p-4">
+                        <div className="lg:w-16 lg:h-16 w-10 h-10 rounded-full border border-[#C4A484]/30 bg-white/40 dark:bg-black/40 backdrop-blur-md flex items-center justify-center mb-4 shadow-xl">
+                            <Icon icon="lucide:coffee" className="text-[#8B5E3C] dark:text-[#C4A484] lg:w-8 lg:h-8 w-6 h-6" />
                         </div>
                         <div className="w-32 h-3 bg-neutral-400/30 dark:bg-white/20 rounded-full mb-2" />
                         <div className="w-24 h-2 bg-neutral-400/20 dark:bg-white/10 rounded-full" />
@@ -69,12 +69,12 @@ export const ProjectVisuals = {
         </div>
     ),
 
-    "vitasalud": (
+    "vitasalud": (image: string) => (
         <div className="absolute inset-4 flex items-center justify-center">
             <div className="relative w-full h-full rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 overflow-hidden transition-transform duration-500 group-hover:scale-[1.015]">
                 <div className="absolute inset-3 rounded-xl overflow-hidden bg-teal-50 dark:bg-[#041a15] flex items-center justify-center">
                     <img
-                        src="/vitasalud.png"
+                        src={image}
                         alt="VitaSalud"
                         className="w-full h-full object-contain p-4 opacity-60 dark:opacity-30 transition-transform duration-700 group-hover:scale-110"
                     />
@@ -84,14 +84,14 @@ export const ProjectVisuals = {
                 <div className="relative z-10 flex flex-col h-full">
                     <div className="h-12 px-5 flex items-center justify-between border-b border-black/5 dark:border-white/5 bg-white/20 dark:bg-black/20 backdrop-blur-sm">
                         <div className="w-16 h-1.5 bg-teal-600/20 dark:bg-teal-200/20 rounded-full" />
-                        <div className="px-2 py-1 bg-teal-600/10 dark:bg-teal-500/20 border border-teal-600/20 dark:border-teal-500/30 rounded text-[7px] text-teal-700 dark:text-teal-300 font-bold uppercase tracking-widest">
+                        <div className="w-16 h-6 bg-teal-600/10 dark:bg-teal-500/20 border border-teal-600/20 dark:border-teal-500/30 rounded text-[7px] flex items-center justify-center text-teal-700 dark:text-teal-300 font-bold uppercase tracking-widest">
                             Vanguardia
                         </div>
                     </div>
 
                     <div className="flex-1 flex flex-col items-center justify-center text-center p-4">
-                        <div className="w-16 h-16 rounded-full border border-teal-600/20 dark:border-teal-500/30 bg-white/40 dark:bg-black/40 backdrop-blur-md flex items-center justify-center mb-4 shadow-xl">
-                            <Icon icon="solar:heart-pulse-linear" className="text-teal-600 dark:text-teal-400 w-8 h-8" />
+                        <div className="lg:w-16 lg:h-16 w-10 h-10 rounded-full border border-teal-600/20 dark:border-teal-500/30 bg-white/40 dark:bg-black/40 backdrop-blur-md flex items-center justify-center mb-4 shadow-xl">
+                            <Icon icon="solar:heart-pulse-linear" className="text-teal-600 dark:text-teal-400 lg:w-8 lg:h-8 w-6 h-6" />
                         </div>
                         <div className="w-28 h-2.5 bg-neutral-400/30 dark:bg-white/20 rounded-full mb-2" />
                         <div className="w-20 h-1.5 bg-neutral-400/20 dark:bg-white/10 rounded-full" />
