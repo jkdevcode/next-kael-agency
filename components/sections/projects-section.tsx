@@ -9,7 +9,7 @@ import { slideUp, staggerContainer } from "@/lib/animations";
 
 export function ProjectsSection() {
     return (
-        <section id="projects" className="max-w-7xl mx-auto px-6 py-24 border-t border-neutral-100 dark:border-neutral-900">
+        <section id="projects" className="max-w-7xl mx-auto px-6 py-24 border-t border-neutral-100 dark:border-neutral-900 duration-500">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
                 <motion.div
                     variants={slideUp}

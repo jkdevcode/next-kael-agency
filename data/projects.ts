@@ -1,18 +1,17 @@
-
 export const projects = [
     {
-        id: "the-classic-cut",
-        title: "The Classic Cut",
-        category: "Sitio de marca premium",
+        id: "blade-and-grain",
+        title: "BLADE & GRAIN",
+        category: "Premium Grooming Experience",
     },
     {
-        id: "mokha-specialty",
-        title: "Mokha Specialty",
-        category: "Landing moderna y cálida",
+        id: "coffee-shop",
+        title: "Coffee Shop",
+        category: "Conversión y Branding Digital",
     },
     {
-        id: "clinica-vital",
-        title: "Clínica Vital",
-        category: "Diseño limpio y profesional",
+        id: "vitasalud",
+        title: "VitaSalud",
+        category: "Interface Médica de Vanguardia",
     },
 ];
