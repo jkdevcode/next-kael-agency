@@ -11,6 +11,9 @@ const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 export const metadata: Metadata = {
     title: "Nexus Digital Studio - Soluciones Digitales de Alto Impacto",
     description: "Transformamos ideas complejas en sistemas eficientes, escalables y orientados a resultados.",
+    icons: {
+        icon: "/Nexus-logo (1).webp",
+    },
 }
 
 export default function RootLayout({

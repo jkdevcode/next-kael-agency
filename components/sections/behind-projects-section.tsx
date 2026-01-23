@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Accordion, AccordionItem } from "@heroui/accordion"
 import {Divider} from "@heroui/divider";
 import { AlertCircle, CheckCircle2, Lightbulb } from "lucide-react"
-import { cn } from "@/lib/utils"
+/* import { cn } from "@/lib/utils" */
 
 const projectStories = [
   {
@@ -105,16 +105,16 @@ export function BehindProjectsSection() {
                   className="group border border-white/5 bg-default-50/5 hover:bg-default-100/10 data-[open=true]:bg-default-100/10 rounded-xl mb-2 p-4 last:mb-0 shadow-none"
                   title={<span className="text-2xl font-bold text-foreground transition-colors block mb-2">{story.title}</span>}
                   subtitle={<span className="leading-relaxed text-sm/6 md:text-base/6 block mt-1">{story.description}</span>}
-                  startContent={<div className={cn("md:w-1.5 w-0.5 h-12 rounded-full transition-colors", theme.bullet)} />}
+                 /*  startContent={<div className={cn("md:w-1.5 w-0.5 h-12 rounded-full transition-colors", theme.bullet)} />} */
                 >
                   <div className="pt-4 pb-6 space-y-8 px-2">
                   <Divider orientation="vertical" />
                     {/* Problema */}
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className={cn("flex items-center justify-center w-9 h-9 rounded-lg border transition-all", theme.ring, theme.bg, theme.icon)}>
+                       {/*  <div className={cn("flex items-center justify-center w-9 h-9 rounded-lg border transition-all", theme.ring, theme.bg, theme.icon)}>
                           <AlertCircle className="w-5 h-5" />
-                        </div>
+                        </div> */}
                         <h4 className="font-bold text-foreground text-lg md:text-xl">El Desafío</h4>
                       </div>
                       <p className="text-default-500 leading-relaxed pl-13 text-sm/7 md:text-base/7 font-medium">{story.problem}</p>
@@ -123,16 +123,16 @@ export function BehindProjectsSection() {
                     {/* Solución */}
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className={cn("flex items-center justify-center w-9 h-9 rounded-lg border transition-all", theme.ring, theme.bg, theme.icon)}>
+                       {/*  <div className={cn("flex items-center justify-center w-9 h-9 rounded-lg border transition-all", theme.ring, theme.bg, theme.icon)}>
                           <CheckCircle2 className="w-5 h-5" />
-                        </div>
+                        </div> */}
                         <h4 className="font-bold text-foreground  text-lg md:text-xl">La Estrategia</h4>
                       </div>
                       <ul className="pl-12 space-y-2">
                         {story.solution.map((item, i) => (
                           <li key={i} className="flex gap-3 text-default-500 text-sm/7 md:text-base/7 font-medium">
-                            <span className={cn("mt-2 w-1.5 h-1.5 rounded-full shrink-0", theme.bullet)} />
-                            <span>{item}</span>
+                            {/* <span className={cn("mt-2 w-1.5 h-1.5 rounded-full shrink-0", theme.bullet)} />
+                            <span>{item}</span> */}
                           </li>
                         ))}
                       </ul>
@@ -141,18 +141,18 @@ export function BehindProjectsSection() {
                     {/* Qué aprendí */}
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className={cn("flex items-center justify-center w-9 h-9 rounded-lg border transition-all", theme.ring, theme.bg, theme.icon)}>
+                        {/* <div className={cn("flex items-center justify-center w-9 h-9 rounded-lg border transition-all", theme.ring, theme.bg, theme.icon)}>
                           <Lightbulb className="w-5 h-5" />
-                        </div>
+                        </div> */}
                         <h4 className="font-bold text-foreground  text-lg md:text-xl">Impacto Logrado</h4>
                       </div>
                       <ul className="pl-12 space-y-2">
-                        {story.learnings.map((item, i) => (
+                     {/*    {story.learnings.map((item, i) => (
                           <li key={i} className="flex gap-3 text-default-500 text-sm/7 md:text-base/7 font-medium">
                             <span className={cn("mt-2 w-1.5 h-1.5 rounded-full shrink-0", theme.bullet)} />
                             <span>{item}</span>
                           </li>
-                        ))}
+                        ))} */}
                       </ul>
                     </div>
                   </div>

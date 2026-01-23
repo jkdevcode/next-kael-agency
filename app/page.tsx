@@ -1,13 +1,13 @@
-import { Navbar } from "@/components/navbar"
-import { HeroSection } from "@/components/hero-section"
-import { SolutionsSection } from "@/components/solutions-section"
-import { ServicesSection } from "@/components/services-section"
-import { ProcessSection } from "@/components/process-section"
-import { WhyUsSection } from "@/components/why-us-section"
-import { ProjectsSection } from "@/components/projects-section"
+import { Navbar } from "@/components/layout/navbar"
+import { HeroSection } from "@/components/sections/hero-section"
+import { SolutionsSection } from "@/components/sections/solutions-section"
+import { ServicesSection } from "@/components/sections/services-section"
+import { ProcessSection } from "@/components/sections/process-section"
+import { WhyUsSection } from "@/components/sections/why-us-section"
+import { ProjectsSection } from "@/components/sections/projects-section"
 /* import { BehindProjectsSection } from "@/components/behind-projects-section" */
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
+import { ContactSection } from "@/components/sections/contact-section"
+import { Footer } from "@/components/layout/footer"
 
 export default function Home() {
   return (

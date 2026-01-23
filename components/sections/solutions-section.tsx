@@ -1,64 +1,26 @@
-"use client"
 
-import { motion } from "framer-motion"
-import { Icon } from "@iconify/react"
-import { Link } from "@heroui/link"
+"use client";
 
-const solutions = [
-    {
-        icon: "solar:rocket-2-linear",
-        title: "Landing Pages de Conversión",
-        description: "Estructuras persuasivas optimizadas para campañas publicitarias.",
-    },
-    {
-        icon: "solar:bolt-linear",
-        title: "Webs Ultra Rápidas",
-        description: "Carga instantánea para mejorar el SEO y retener usuarios.",
-    },
-    {
-        icon: "solar:smartphone-linear",
-        title: "Mobile First",
-        description: "Diseño pensado principalmente para la experiencia en teléfonos.",
-    },
-    {
-        icon: "solar:magic-stick-3-linear",
-        title: "Branding Digital",
-        description: "Interacciones sutiles que elevan el valor percibido de tu marca.",
-    },
-]
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1,
-        },
-    },
-}
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-}
+import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
+import { Link } from "@heroui/link";
+import { BackgroundGrid } from "@/components/ui/background-grid";
+import { solutions } from "@/data/solutions";
+import { staggerContainer, slideUp } from "@/lib/animations";
 
 export function SolutionsSection() {
     return (
         <section className="relative py-24 bg-white dark:bg-[#050505] transition-colors duration-500 overflow-hidden">
-
-            {/* Background Elements (Same as Hero) */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
-                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/10 dark:bg-blue-500/5 blur-[120px] rounded-full opacity-40 mix-blend-multiply dark:mix-blend-normal" />
-            </div>
+            <BackgroundGrid />
 
             <div className="container relative z-10 max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
                     {/* Text Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        variants={slideUp}
+                        initial="hidden"
+                        whileInView="visible"
                         viewport={{ once: true }}
                         className="lg:col-span-1"
                     >
@@ -79,7 +41,7 @@ export function SolutionsSection() {
 
                     {/* Cards Grid */}
                     <motion.div
-                        variants={containerVariants}
+                        variants={staggerContainer}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
@@ -88,7 +50,7 @@ export function SolutionsSection() {
                         {solutions.map((solution, index) => (
                             <motion.div
                                 key={index}
-                                variants={itemVariants}
+                                variants={slideUp}
                             >
                                 <div className="group p-6 rounded-xl bg-white/50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/50 hover:bg-neutral-50 dark:hover:bg-neutral-900/60 transition-colors backdrop-blur-sm h-full">
                                     <div className="flex justify-between items-start mb-4">
