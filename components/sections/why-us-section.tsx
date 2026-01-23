@@ -10,7 +10,7 @@ import { staggerContainer, slideUp } from "@/lib/animations";
 
 export function WhyUsSection() {
     return (
-        <section className="relative py-24 bg-white dark:bg-[#050505] transition-colors duration-500 overflow-hidden">
+        <section id="why-us" className="relative py-24 bg-white dark:bg-[#050505] transition-colors duration-500 overflow-hidden">
             <BackgroundGrid />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">

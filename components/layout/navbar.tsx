@@ -22,6 +22,7 @@ export function Navbar() {
 
     return (
         <HeroNavbar
+            shouldHideOnScroll
             onMenuOpenChange={setIsMenuOpen}
             maxWidth="xl"
             isBordered
@@ -80,7 +81,7 @@ export function Navbar() {
                 <NavbarItem className="hidden md:flex">
                     <Button
                         as={Link}
-                        href="#"
+                        href="#contact"
                         variant="light"
                         className="text-sm font-medium text-neutral-900 dark:text-white bg-neutral-100 dark:bg-white/5 hover:bg-neutral-200 dark:hover:bg-white/10 border border-neutral-200 dark:border-white/10 rounded-full px-6 transition-all group"
                         endContent={
@@ -110,7 +111,7 @@ export function Navbar() {
                 <NavbarMenuItem className="pt-8">
                     <Button
                         as={Link}
-                        href="#"
+                        href="#contact"
                         fullWidth
                         className="text-white dark:text-black bg-neutral-900 dark:bg-white text-lg font-medium py-6 rounded-full"
                         endContent={<Icon icon="solar:arrow-right-linear" />}
