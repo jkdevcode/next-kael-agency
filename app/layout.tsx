@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         icon: "/Nexus-logo.webp",
     },
     verification: {
-    google: "6ooIvcjZ8VfnyLWp8Ii_oYBUJWzibmPqhKakFSYpYLY",
+    google: "uHsBGpDyhin8TgY0aX-2h-f0gac9utg2G9lNRGeD6dU",
   },
 }
 
