@@ -12,8 +12,11 @@ export const metadata: Metadata = {
     title: "Nexus Digital Studio - Soluciones Digitales de Alto Impacto",
     description: "Transformamos ideas complejas en sistemas eficientes, escalables y orientados a resultados.",
     icons: {
-        icon: "/Nexus-logo (1).webp",
+        icon: "/Nexus-logo.webp",
     },
+    verification: {
+    google: "6ooIvcjZ8VfnyLWp8Ii_oYBUJWzibmPqhKakFSYpYLY",
+  },
 }
 
 export default function RootLayout({
