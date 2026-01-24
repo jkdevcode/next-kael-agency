@@ -22,8 +22,9 @@ export function Navbar() {
 
     return (
         <HeroNavbar
-            shouldHideOnScroll
+            isMenuOpen={isMenuOpen}
             onMenuOpenChange={setIsMenuOpen}
+            shouldHideOnScroll
             maxWidth="xl"
             isBordered
             className="bg-white/80 dark:bg-[#050505]/80 backdrop-blur-md border-b border-neutral-200 dark:border-white/5"
@@ -103,6 +104,7 @@ export function Navbar() {
                             className="w-full text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-xl font-medium py-2"
                             href={item.href}
                             size="sm"
+                            onClick={() => setIsMenuOpen(false)}
                         >
                             {item.label}
                         </Link>
@@ -115,6 +117,7 @@ export function Navbar() {
                         fullWidth
                         className="text-lg font-medium text-neutral-900 dark:text-white bg-neutral-100 dark:bg-white/5 hover:bg-neutral-200 dark:hover:bg-white/10 border border-neutral-200 dark:border-white/10 py-6 transition-all group"
                         endContent={<Icon icon="solar:arrow-right-linear" />}
+                        onClick={() => setIsMenuOpen(false)}
                     >
                         Contact
                     </Button>
