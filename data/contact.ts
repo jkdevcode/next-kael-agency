@@ -3,14 +3,14 @@ export const contactInfo = [
     {
         icon: "solar:letter-linear",
         label: "Email",
-        value: "nexuslandungstudio@gmail.com",
-        href: "mailto:nexuslandungstudio@gmail.com",
+        value: "nexuslandingstudio@gmail.com",
+        href: "mailto:nexuslandingstudio@gmail.com",
     },
     {
         icon: "solar:phone-calling-linear",
         label: "Teléfono",
-        value: "+57 (1) 1234-5678",
-        href: "tel:+57112345678",
+        value: "+57 3138584745",
+        href: "tel:+573138584745",
     },
     {
         icon: "solar:map-point-linear",
@@ -30,7 +30,7 @@ export const socialLinks = [
     {
         icon: "mdi:whatsapp",
         label: "WhatsApp",
-        href: "https://wa.me/5712345678",
+        href: "https://wa.me/573138584745",
         color: "text-[#25d366]",
     },
 ];
