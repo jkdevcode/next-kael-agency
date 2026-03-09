@@ -78,7 +78,7 @@ export function BehindProjectsSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Nuestra Metodología</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg md:text-xl leading-relaxed text-pretty font-medium">
-            Cada solución exitosa nace de entender profundamente el desafío. Así es como en Nexus Digital Studio abordamos cada proyecto,
+            Cada solución exitosa nace de entender profundamente el desafío. Así es como en Kael Agency abordamos cada proyecto,
             superando obstáculos y entregando valor tangible a través de la tecnología.
           </p>
         </motion.div>
