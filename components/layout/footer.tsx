@@ -3,6 +3,7 @@
 
 import { Link } from "@heroui/link";
 import { Icon } from "@iconify/react";
+import { KaelIcon } from "@/components/icons/icons";
 import { motion } from "framer-motion";
 import { footerLinks } from "@/data/navigation";
 import { socialLinks } from "@/data/contact";
@@ -19,10 +20,10 @@ export function Footer() {
                     <div className="lg:col-span-1">
                         <Link href="/" className="flex items-center gap-2 mb-6 group cursor-pointer text-inherit">
                             <div className="w-8 h-8 bg-black dark:bg-white rounded-lg flex items-center justify-center text-white dark:text-black font-bold text-lg group-hover:scale-110 transition-transform duration-300">
-                                N
+                                <KaelIcon size={16} />
                             </div>
                             <span className="font-bold text-xl tracking-tight text-neutral-900 dark:text-white group-hover:opacity-80 transition-opacity">
-                                Nexus Studio
+                                Kael
                             </span>
                         </Link>
                         <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed mb-8 max-w-xs">
@@ -88,7 +89,7 @@ export function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-neutral-200 dark:border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500 dark:text-neutral-500">
-                    <p>© {currentYear} Nexus Studio. Todos los derechos reservados.</p>
+                    <p>© {currentYear} Kael Agency. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>

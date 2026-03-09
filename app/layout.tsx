@@ -9,10 +9,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-    title: "Nexus Digital Studio - Soluciones Digitales de Alto Impacto",
+    title: "Kael Agency - Soluciones Digitales de Alto Impacto",
     description: "Transformamos ideas complejas en sistemas eficientes, escalables y orientados a resultados.",
     icons: {
-        icon: "/Nexus-logo.webp",
+        icon: "/Kael-logo.webp",
     },
     verification: {
     google: "uHsBGpDyhin8TgY0aX-2h-f0gac9utg2G9lNRGeD6dU",
