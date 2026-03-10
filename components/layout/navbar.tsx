@@ -56,7 +56,7 @@ export function Navbar() {
               <KaelIcon size={16} />
             </div>
             <span className="text-neutral-900 dark:text-white font-medium tracking-tighter text-lg transition-colors duration-500">
-              Kael
+              Kael Agency
             </span>
           </Link>
         </NavbarBrand>

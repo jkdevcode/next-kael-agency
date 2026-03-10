@@ -23,7 +23,7 @@ export function Footer() {
                                 <KaelIcon size={16} />
                             </div>
                             <span className="font-bold text-xl tracking-tight text-neutral-900 dark:text-white group-hover:opacity-80 transition-opacity">
-                                Kael
+                                Kael Agency
                             </span>
                         </Link>
                         <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed mb-8 max-w-xs">
